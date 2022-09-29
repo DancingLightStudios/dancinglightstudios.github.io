@@ -8,7 +8,14 @@ html, body {
 
 @font-face {
   font-family: "Montserrat";
-  src: url("/public/fonts/Montserrat-VF.woff2") format("woff2");
+  src: url("/public/fonts/Montserrat-VF.woff2") format("woff2")
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  src: url("/public/fonts/Montserrat-bold800.woff") format("woff")
 }
 
 .capsizedText::before {

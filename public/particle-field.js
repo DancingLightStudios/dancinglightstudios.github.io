@@ -10,6 +10,10 @@ let particles, count = 0;
 let windowHalfX = window.innerWidth / 2;
 let windowHalfY = window.innerHeight / 2;
 
+let clock = new THREE.Clock()
+let speed = 2;
+let delta = 0;
+
 init();
 animate();
 
@@ -100,7 +104,6 @@ function animate() {
 }
 
 function render() {
-
 	// camera.position.x += ( mouseX - camera.position.x ) * .05;
 	// camera.position.y += ( - mouseY - camera.position.y ) * .05;
 	// camera.position.x = 1000
@@ -110,11 +113,12 @@ function render() {
 	camera.position.y = 300
 	camera.lookAt( scene.position );
 
+	delta = clock.getDelta() * speed;
+
 	const positions = particles.geometry.attributes.position.array;
 	const scales = particles.geometry.attributes.scale.array;
 
 	let i = 0, j = 0;
-
 	for ( let ix = 0; ix < AMOUNTX; ix ++ ) {
 
 		for ( let iy = 0; iy < AMOUNTY; iy ++ ) {
@@ -137,6 +141,5 @@ function render() {
 
 	renderer.render( scene, camera );
 
-	count += 0.1;
-
+	count += delta;
 }
