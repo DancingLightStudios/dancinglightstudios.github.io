@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/fonts/Montserrat-VF.woff2") format("woff2");
+}
+
+.capsizedText::before {
+	content: "";
+	margin-bottom: 0.0137em;
+	display: table;
+}
+
+.capsizedText::after {
+	content: "";
+	margin-top: -0.0137em;
+	display: table;
+}
