@@ -817,7 +817,7 @@ video {
 }
 
 .drop-shadow-4xl {
-  --tw-drop-shadow: drop-shadow(0 0px 5px rgb(0 0 0 / 0.08)) drop-shadow(0 00px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 15px 35px rgba(0, 0, 0, 0.25)) drop-shadow(0 15px 65px rgba(0, 0, 0, 0.15));
+  --tw-drop-shadow: drop-shadow(0 0px 5px rgba(0, 0, 0, 0.08)) drop-shadow(0 0px 13px rgba(0, 0, 0, 0.3)) drop-shadow(0 15px 35px rgba(0, 0, 0, 0.25)) drop-shadow(0 15px 65px rgba(0, 0, 0, 0.15));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
