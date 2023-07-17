@@ -87,7 +87,7 @@ DEPENDENCIES
   jekyll-titles-from-headings
 
 RUBY VERSION
-   ruby 3.2.1p31
+   ruby 3.0.5p211
 
 BUNDLED WITH
    2.4.6

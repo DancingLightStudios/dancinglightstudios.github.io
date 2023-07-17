@@ -11,7 +11,7 @@ plugins:
 markdown:    kramdown
 exclude:     [] # Files and folders to skip when building
 keep_files:  [] # when clobbering the dest, keep the files
-destination: "../dist" # Where jekyll will build the site to
+destination: "../_dist" # Where jekyll will build the site to
 permalink:   /:title # how urls will be created. eg: "website.com/category/title"
 charset:     utf-8 # Website character set
 baseurl:     /     # root
