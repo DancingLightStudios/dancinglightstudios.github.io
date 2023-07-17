@@ -1,0 +1,23 @@
+{% if include.item.text %}
+  {% capture class %}
+    {% if include.item.class %}
+      {{ include.item.class }}
+    {% else %}
+      {{ include.item.text | downcase | replace: " ", "-" }}
+    {% endif %}
+  {% endcapture %}
+
+  {% capture active %}
+    {% if page.class contains class %}is-active{% endif %}
+  {% endcapture %}
+
+  <a class="site-nav__link nav-link {{ class }}" href="{{ include.item.url }}">
+    <span class="site-nav__inner-text nav-link__text {% if include.item.show-text == false %}sr-only{% endif %}">{{ include.item.text }}</span>
+
+    {% if include.item.icon %}
+      {% capture icon %}components/icon-{{include.item.icon}}.svg{%endcapture%}
+
+      {% include {{ icon }} %}
+    {% endif %}
+  </a>
+{% endif %}

@@ -1,0 +1,46 @@
+---
+title: News
+layout: news
+pagination:
+  enabled: true
+  per_page: 3
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/page-news.css' | prepend: site.baseurl }}">
+
+<section class="c-news">
+  <div class="c-news__wrapper wrapper">
+    <div class="c-news__container container">
+      <ul class="c-news__posts">
+        {% for post in paginator.posts %}
+        <li class="c-news__post">
+          <div>
+            <a href="{{ post.url }}">
+              <img src="{{ post.hero-image.src }}" alt="{{ post.hero-image.alt }}">
+              <h1>{{ post.title }}</h1>
+            </a>
+            <span>{{ post.author }}</span>
+            <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {% if paginator.total_pages > 1 %}
+      <ul class="c-news__pagination">
+        {% if paginator.previous_page %}
+        <li>
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer News</a>
+        </li>
+        {% endif %}
+
+        {% if paginator.next_page %}
+        <li>
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older News</a>
+        </li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</section>

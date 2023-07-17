@@ -1,0 +1,58 @@
+#!/bin/bash
+
+if [ "$1" ]; then
+  if [ "$1" != 'prod' ]; then
+    echo "Did you mean 'prod'?"
+    exit;
+  fi
+fi
+
+# install dependencies
+echo ""
+echo "Installing Dependencies"
+echo "---"
+npm install
+bundle install
+echo "---"
+
+# remove existing folders, or contents
+echo ""
+echo "Setting Up Project Directories"
+echo "---"
+if [ "$1" = 'prod' ]; then
+  rm -rf dist
+else
+  rm -rf dist/assets/js/*
+  rm -rf dist/assets/css/*
+fi
+
+# ensure folders for assets exist
+mkdir -p dist/assets/js
+mkdir -p dist/assets/css
+echo "---"
+
+if [ "$1" = 'prod' ]; then
+  echo ""
+  echo "Building Site"
+  echo "---"
+  bundle exec jekyll build \
+  --config 'src/_config.yml,src/_config-production.yml' \
+  --source src/ \
+  --destination dist/
+  echo '---'
+  exit
+fi
+
+echo ""
+echo "Running Development Server"
+echo "---"
+trap 'echo "Development Server Killed"; kill %1; kill %2; kill %3; kill %4' SIGINT SIGKILL SIGQUIT
+
+npx netlify-cms-proxy-server \
+& bundle exec jekyll build \
+  --drafts \
+  --watch \
+  --config 'src/_config.yml,src/_config-development.yml' \
+  --source src/ \
+  --destination dist/ \
+& npx browser-sync dist -w  -f ./dist \

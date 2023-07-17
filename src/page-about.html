@@ -1,0 +1,74 @@
+---
+layout: default
+permalink: /about/index.html
+title: About
+class: about
+---
+{% assign page = site.data.page-about %}
+
+<link rel="stylesheet" href="{{ '/assets/css/page-about.css' | prepend: site.baseurl }}">
+
+<div class="hero container--x">
+	<div class="separator--wrapper">
+		<div class="container--y">
+			<header class="header">
+				<h1 class="header__heading">{{ page.header }}</h1>
+				<p class="header__subheading">{{ page.subheader }}</p>
+			</header>
+		</div>
+	</div>
+
+	<div class="separator--block-end">
+		{% include components/corner-left-bottom.svg %}
+	</div>
+</div>
+
+<div class="values container--x">
+	<div class="separator--block-start">
+		{% include components/corner-left-top.svg %}
+	</div>
+
+	<div class="separator--wrapper">
+		<div class="container--y">
+			<div class="content">
+				{% for value in page.values %}
+				<div class="value">
+					<h2>{{ value.title }}</h2>
+					{{ value.body | markdownify }}
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div class="separator--block-end">
+		{% include components/corner-right-bottom.svg %}
+	</div>
+</div>
+
+<div class="leadership container--x red">
+	<div class="separator--block-start">
+		{% include components/corner-right-top.svg %}
+	</div>
+
+	<div class="separator--wrapper">
+		<div class="container--y">
+			<div class="content">
+				{% for staff_member in page.leadership %}
+					{% for site_staff_member in site.staff_members %}
+						{% if staff_member.staff== site_staff_member.name %}
+						<div class="leader">
+							<h2>{{ site_staff_member.name }}</h2>
+							<p>{{ site_staff_member.title }}, {{ site_staff_member.content }}</p>
+						</div>
+						{% endif %}
+					{% endfor %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div class="separator--block-end">
+		{% include components/corner-right-bottom.svg %}
+	</div>
+</div>

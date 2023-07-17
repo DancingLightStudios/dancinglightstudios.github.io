@@ -1,0 +1,23 @@
+{%- if site.web-app-enabled %}
+
+<!--iOS -->
+<meta name="apple-mobile-web-app-title" content="{{ site.web-app-title }}">
+<meta name="apple-mobile-web-app-capable" content="{{ site.web-app-capable }}">
+<meta name="apple-mobile-web-app-status-bar-style" content="{{ site.web-app-style }}">
+
+<!-- Startup images -->
+<!-- 1: iPhone 3GS, pre-2011 iPod Touch -->
+<!-- 2: iPhone 4, 4S and 2011 iPod Touch-->
+<!-- 3: iPhone 5 and 2012 iPod Touch -->
+<!-- 4: iPad landscape -->
+<!-- 5: iPad Portrait -->
+<link rel="apple-touch-startup-image" href="/assets/img/startup-320x460.png" media="screen and (max-device-width:320px)">
+<link rel="apple-touch-startup-image" href="/assets/img/startup-640x920.png" media="(max-device-width:480px) and (-webkit-min-device-pixel-ratio:2)">
+<link rel="apple-touch-startup-image" href="/assets/img/startup-640x1096.png" media="(max-device-width:548px) and (-webkit-min-device-pixel-ratio:2)">
+<link rel="apple-touch-startup-image" href="/assets/img/startup-1024x748.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape)">
+<link rel="apple-touch-startup-image" href="/assets/img/startup-768x1004.png" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)">
+
+<!-- Prevents links from opening in mobile Safari -->
+<script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+
+{% endif %}

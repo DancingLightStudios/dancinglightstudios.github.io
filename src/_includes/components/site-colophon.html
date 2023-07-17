@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="{{ '/assets/css/site-colophon.css' | prepend: site.baseurl }}">
+
+<div class="colophon container--x">
+  <div class="nav-jump-point" id="contact"></div>
+
+  <div class="separator--block-start">
+    {% include components/corner-right-top.svg %}
+  </div>
+
+  <div class="container--x-wrapper separator--wrapper">
+    <div class="container--y">
+      <div class="content">
+        <div class="contact-info">
+          <h2>Get in touch</h2>
+
+          <p>
+            Embrace the revolution and become part of the legacy. Let’s weave dreams
+            into realities together. Ignite your journey with us; your odyssey
+            beckons.
+          </p>
+
+          <dl>
+            {% if site.data.constants-contact.address.street %}
+            <div>
+              <dt>
+                <span class="sr-only">Address</span>
+                {% include components/icon-address.svg %}
+              </dt>
+
+              <dd>
+                {{ site.data.constants-contact.address.street }}
+                <br>
+                {{ site.data.constants-contact.address.city }}, {{
+                site.data.constants-contact.address.state }} {{
+                site.data.constants-contact.address.country }}
+                <br>
+                {{ site.data.constants-contact.address.post-code }}
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if site.data.constants-contact.phone.value %}
+            <div>
+              <dt>
+                <span class="sr-only">Telephone</span>
+                {% include components/icon-phone.svg %}
+              </dt>
+              <dd>
+                <a href="tel:{{ site.data.constants-contact.phone.value }}">{{ site.data.constants-contact.phone.display }}</a>
+              </dd>
+            </div>
+            {% endif %}
+
+            {% if site.data.constants-contact.email %}
+            <div>
+              <dt>
+                <span class="sr-only">Email</span>
+                {% include components/icon-letter.svg %}
+              </dt>
+              <dd>
+                <a href="mailto:hello@dancinglightstudios.ca">hello@dancinglightstudios.ca</a>
+              </dd>
+            </div>
+            {% endif %}
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="separator--block-end">
+    {% include components/corner-right-bottom.svg %}
+  </div>
+</div>
