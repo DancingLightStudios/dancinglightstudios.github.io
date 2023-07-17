@@ -1,0 +1,3 @@
+---
+permalink: /privacy/index.html
+---

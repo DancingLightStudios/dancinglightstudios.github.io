@@ -1,0 +1,57 @@
+//
+//
+//  Centering Tools
+//  ---
+//  Common centering techniques
+//
+//
+
+// use margin: auto to center element horizontally
+//
+// All params are optional, use named params
+// $left: bool - sets left margin to auto
+// $right: bool - sets right margin to auto
+//
+// Example: main { @include margin-cener }
+@mixin margin-center($start: true, $end: true) {
+  @if ($start == true and $end == true) {
+    margin-inline: auto;
+  } @else if ($start == true and $end == false) {
+    margin-inline-start: auto;
+  } @else if ($start == false and $end == true) {
+    margin-inline-end: auto;
+  }
+}
+
+
+// use transforms to center element horizontally and vertically
+//
+// All params are optional, use named params
+// $top: sets top offset
+// $left: sets left offset
+// Set either direction to false to skip centering that direction
+//
+// Example: main { @include transform-center }
+@mixin transform-center($top: 50%, $left: 50%) {
+  @if $top and $left == false {
+    transform: translateY(-$top);
+  } @else if $top == false and $left {
+    transform: translateX(-$left);
+  } @else {
+    transform: translate(-$top, -$left);
+  }
+}
+
+// use flexbox to position an element vertically and horizontally centered
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

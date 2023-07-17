@@ -1,0 +1,135 @@
+.page-styleguide {
+  .styleguide__table-of-contents {
+    @include border-solid(1px, $color-primary, bottom);
+    @include padding($gutter);
+    background-color: $color-grey--lightest;
+
+    @include screen($bp-desktop) {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0px;
+      display: grid;
+      grid-gap: $gutter;
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    a {
+      @include font-complimentary;
+      text-decoration: none;
+    }
+  }
+
+  .styleguide-section {
+    @include margin-center;
+    @include wrapper-sizing;
+    @include flex-column-to-row($bp-desktop);
+    @include border-solid(2px, $color-grey--lighter, bottom);
+    @include padding-block($gutter--xl);
+    display: flex;
+
+    &__title {
+      flex-basis: 33%;
+      flex-shrink: 0;
+    }
+
+    &__wrapper {
+      @include flex-center-vertical;
+      flex-grow: 1;
+    }
+  }
+
+  .styleguide-label {
+    @include font-complimentary;
+    font-size: fs(xx-small);
+    color: $color-grey--light;
+    text-transform: uppercase;
+    @include margin-block-start($gutter);
+  }
+
+  .branding__content {
+    @include flex-column;
+    @include flex-column-to-row($bp-desktop);
+    justify-content: space-between;
+
+    > div {
+      @include flex-half($gutter--xl);
+    }
+  }
+
+  .colors-in-use {
+    &__content {
+      @include flex-column-to-row($bp-tablet);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      > div {
+        @include flex-half($gutter);
+      }
+    }
+
+    &__color-block {
+      height: 250px;
+    }
+
+    &__primary-color {
+      background-color: $color-primary;
+    }
+
+    &__secondary-color {
+      background-color: $color-secondary;
+    }
+
+    &__base-color {
+      background-color: $color-base;
+    }
+
+    &__border-color {
+      background-color: $color-border;
+    }
+  }
+
+  .primary-typeface__content {
+     @include font-body;
+  }
+
+  .complimentary-typeface__content {
+    @include font-complimentary;
+  }
+
+  .display-typeface__content {
+    @include font-display;
+  }
+
+  .paragraphs__columns {
+    @include columns(4);
+  }
+
+  .headings__content {
+    @include flex-column;
+    @include flex-column-to-row($bp-desktop);
+
+    > div {
+      @include flex-half($gutter);
+    }
+
+    .headings {
+      @each $font-size in $font-sizes {
+        &__#{nth($font-size, 1)} {
+          font-size: fs(nth($font-size, 1));
+        }
+      }
+    }
+  }
+
+  .lists__content {
+    @include flex-column-to-row($bp-tablet);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    > div {
+      @include flex-even(3, $gutter--xl);
+    }
+  }
+}

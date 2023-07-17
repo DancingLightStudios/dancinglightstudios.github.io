@@ -1,0 +1,91 @@
+//
+//
+// Mobile Navigation
+// ---
+// Styling for mobile navigation and toggling state
+//
+//
+
+.nav-toggle {
+  display: block;
+  position: relative;
+
+  @media screen and (min-width: $bp-desktop) {
+    display: none;
+  }
+}
+
+.nav-toggle__icon {
+  width: $width--xl;
+  height: $height--xl;
+  display: block;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  @include transition(opacity);
+
+  &--spacer {
+    // the icons are positioned relative, which collapses the toggle bounding box
+    // this sizes the toggle bounding box to the size of the icons
+    position: relative
+  }
+}
+
+//
+//
+// Navigation States
+// ---
+//
+//
+
+@mixin show {
+  opacity: 1;
+  pointer-events: initial
+}
+
+@mixin hide {
+  opacity: 0;
+  pointer-events: none
+}
+
+// Menu Open
+// ---------
+.mobile-nav-input:checked ~ .site-nav > .site-nav__container > .site-nav__list {
+  max-height: 500px;
+
+  @media screen and (min-width: $bp-desktop) {
+    display: inherit;
+  }
+}
+
+.mobile-nav-input:checked ~ .site-nav > .site-nav__container > .site-nav__toggle {
+  .nav-toggle__icon--open {
+    @include hide;
+  }
+
+  .nav-toggle__icon--close {
+    @include show;
+  }
+}
+
+// Menu Closed
+// -----------
+.mobile-nav-input:not(:checked) ~ .site-nav > .site-nav__container > .site-nav__list {
+  @media screen and (min-width: $bp-desktop) {
+    max-height: inherit;
+    heigth: inherit;
+  }
+}
+
+.mobile-nav-input:not(:checked) ~ .site-nav > .site-nav__container > .nav-toggle {
+  .nav-toggle__icon--open {
+    @include show;
+  }
+
+  .nav-toggle__icon--close {
+    @include hide;
+  }
+}
+
+
+

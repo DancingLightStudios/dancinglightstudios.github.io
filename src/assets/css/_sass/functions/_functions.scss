@@ -1,0 +1,103 @@
+//
+//
+//  Functions
+//  ---
+//  Useful functions for generating values
+//
+//
+// stylelint-disable scss/at-function-pattern, scss/dollar-variable-pattern
+
+// Remove unit suffix from a value
+@function -strip-units($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+// Return value nearest multiple of baseline
+@function -size($desired-value) {
+  $baseline: $global-baseline;
+  @if ($desired-value <= ($baseline + ($baseline / 2))) {
+    @if ($debug-size-warning) {
+      @warn "#{$desired-value} is smaller than #{$baseline + ($baseline / 2)}, did you mean it?";
+    }
+    $baseline: $global-baseline / 4;
+  }
+
+  $value: round($desired-value / $baseline);
+
+  $return-value: $value * $baseline;
+
+  @if (unitless($return-value)) {
+    $return-value: $return-value + "px";
+  }
+
+  @if (type-of($return-value) != "number") {
+    $return-value: unquote($return-value);
+  }
+
+  @return $return-value;
+}
+
+@function -multiple($desired-value, $baseline: $global-baseline) {
+  $s: -strip-units($desired-value);
+  $b: -strip-units($baseline);
+  $m: $s / $b;
+  $M: 1;
+
+  @if ($m % 1 == 0) {
+    $M: $m + 1;
+  } @else {
+    $M: ceil($m);
+  }
+
+  // 16px font, 24px baseline, 24 / 16 = 1.5
+  @return ($M * $b / $s);
+}
+
+@function -color($color, $variant: base) {
+  @return map-get($color, $variant);
+}
+
+@function -shadow(
+  $x: null,
+  $y: null,
+  $blur: null,
+  $spread: null,
+  $color: null
+) {
+  @return unquote("#{$x} #{$y} #{$blur} #{$spread} #{$color}");
+}
+
+@function -isvar($string) {
+  $find: "--";
+
+  @if (str-index("#{$string}", "--") == 1) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+// stylelint-enable
+
+@function -g($multiplier) {
+  @return $multiplier / 4 + rem;
+}
+
+// Replace `$search` with `$replace` in `$string`
+/// @author Hugo Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}

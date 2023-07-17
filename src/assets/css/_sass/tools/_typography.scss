@@ -1,0 +1,74 @@
+//
+//
+//  Typography
+//  ---
+//  Helpers to manage typography
+//
+//
+
+// set element max-width
+//
+// $measure: !optional max line length, defaults to $global-measure
+//
+// example: p { @include measure }
+@mixin measure($measure: $global-measure) {
+  max-width: $measure;
+}
+
+// set element to use columns to manage it's content
+//
+// $count: !optional number of columns to split up
+// $gap: !optional width between columns
+// $width: !optional max column width
+//
+// example: .bio { @include columns(2, 10px) }
+@mixin columns($count: 2, $gap: $gutter--large, $width: null) {
+  @if ($width != null) {
+    column-width: $width;
+  } @else {
+    column-count: $count;
+  }
+
+  column-gap: -size($gap);
+  column-fill: balance-all;
+  orphans: 2;
+  widows: 2;
+}
+
+// force element to span columns
+@mixin column-span($count: all) {
+  column-span: $count;
+}
+
+// prevent element from wrapping into multiple columns
+@mixin avoid-column-break {
+  break-inside: avoid-column;
+}
+
+// Force a line break on an element.
+// mostly used to manage text that wraps at certain sizes
+@mixin line-break {
+  &::after {
+    content: "\A";
+    white-space: pre;
+  }
+}
+
+// Set lines be wrapped like they are in the markup
+@mixin line-wrap {
+  white-space: pre-line;
+}
+
+// Inline list with separator
+@mixin inline-list($separator: " ") {
+  list-style: none;
+
+  li {
+    display: inline-block;
+
+    &:not(:last-of-type)::after {
+      content: "#{$separator}";
+      @include margin-horizontal($gutter);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+//
+//
+//  Hyperlink Styles
+//  ---
+//  Don't forget hover, active, and visited states
+//
+//
+
+a {
+  color: $color-grey--darkest;
+  @include transition(color);
+
+  &:hover {
+    color: $color-primary;
+  }
+}

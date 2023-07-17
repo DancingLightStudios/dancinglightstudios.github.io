@@ -1,10 +1,7 @@
-_site/
-_tmp/
+.jekyll-metadata
+node_modules
+vendor
 .DS_Store
-node_modules/
-.vscode/
-*git/
-.env
-
-# Local Netlify folder
-.netlify
+.sass-cache
+dist/*
+tags

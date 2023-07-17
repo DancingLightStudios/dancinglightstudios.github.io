@@ -1,0 +1,30 @@
+form {
+  @include padding-inline($gutter--xl);
+
+  @media screen and (min-width: 620px) {
+    @include padding-block-end($gutter--enormous);
+  }
+
+  @media screen and (min-width: 1024px) {
+    @include padding($gutter--huge, $gutter--xl);
+  }
+
+  fieldset {
+    @include margin-block-start($gutter--large);
+
+    &:has(button) {
+      text-align: right;
+    }
+  }
+
+  label {
+    color: $color-grey--darkest;
+    display: block;
+  }
+
+  button[type="submit"] {
+    background-color: -color($color-celery);
+    color: $color-grey--white;
+    @include margin-block-start($gutter--large);
+  }
+}

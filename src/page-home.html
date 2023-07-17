@@ -1,0 +1,176 @@
+---
+permalink: /index.html
+layout: home
+class: home
+---
+{% assign page = site.data.page-home %}
+
+<link rel="stylesheet" href="{{ '/assets/css/page-home.css' | prepend: site.baseurl }}">
+
+<div class="hero container--x">
+  <div class="hero__wrapper container--y">
+    <header class="hero__header header">
+      <h1 class="header__heading">{{ page.hero-title }}</h1>
+
+      <p class="header__subheading">{{ page.hero-leader }}
+
+      <p class="header__content">{{ page.hero-body }}
+    </header>
+
+    <div class="hero__art">
+      <img src="/assets/img/hero-layer-1.svg" class="layer-1" />
+      <img src="/assets/img/hero-layer-1.svg" class="layer-2" />
+      <img src="/assets/img/hero-layer-2.svg" class="layer-3" />
+    </div>
+  </div>
+
+  <div class="hero__bg">
+    {% include components/color-gradient-circle.html %}
+  </div>
+
+  <div class="hero__blob--one" aria-hidden="true">
+    <div class="polygon"></div>
+  </div>
+
+  <div class="hero__blob--two" aria-hidden="true">
+    <div class="polygon"></div>
+  </div>
+</div>
+
+<div class="pl container--x">
+  <div class="nav-jump-point" id="physical-literacy"></div>
+
+  <div class="separator--block-start">
+    {% include components/corner-left-top.svg %}
+  </div>
+
+  <div class="container--x-wrapper separator--wrapper">
+    <div class="container--y">
+      <div class="content">
+        <div class="content-card">
+          <h2 class="content-card__heading">{{ page.pl-title }}</h2>
+          <p class="content-card__subheading">{{ page.pl-leader }}
+
+            <p class="content-card__content">{{ page.pl-text }}
+
+              <dl class="content-card__list">
+                {% for point in page.pl-points %}
+                <div class="content-card__list-wrapper">
+                  <dt class="content-card__list-title">
+                  {% if point.icon %} {% capture icon
+                  %}components/icon-{{point.icon}}.svg{%endcapture%} {% include {{
+                  icon }} %} {% endif %} {{ point.title }}
+                  </dt>
+                  <dd class="content-card__list-body">{{ point.body }}</dd>
+                </div>
+                {% endfor %}
+              </dl>
+
+              {% if page.pl-link.href %}
+              <a class="button" href="{{ page.pl-link.href }}">{{ page.pl-link.text }}</a>
+              {% endif %}
+        </div>
+
+        <div>
+          <img class="image--card" src="{{ page.pl-image.src | prepend: site.baseurl }}" alt="{{ page.pl-image.alt }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="separator--block-end">
+    {% include components/corner-right-bottom.svg %}
+  </div>
+</div>
+
+<div class="lbe container--x">
+  <div class="nav-jump-point" id="location-based-entertainment"></div>
+
+  <div class="separator--block-start">
+    {% include components/corner-right-top.svg %}
+  </div>
+
+  <div class="container--x-wrapper separator--wrapper">
+    <div class="container--y">
+      <div class="content">
+        <div class="content-card">
+          <h2 class="content-card__heading">{{ page.lbe-title }}</h2>
+          <p class="content-card__subheading">{{ page.lbe-leader }}
+
+            <p class="content-card__content">{{ page.lbe-text }}
+
+              <dl class="content-card__list">
+                {% for point in page.pl-points %}
+                <div class="content-card__list-wrapper">
+                  <dt class="content-card__list-title">
+                  {% if point.icon %} {% capture icon
+                  %}components/icon-{{point.icon}}.svg{%endcapture%} {% include {{
+                  icon }} %} {% endif %} {{ point.title }}
+                  </dt>
+                  <dd class="content-card__list-body">{{ point.body }}</dd>
+                </div>
+                {% endfor %}
+              </dl>
+
+              {% if page.lbe-link.href %}
+              <a class="button" href="{{ page.lbe-link.href }}">{{ page.lbe-link.text }}</a>
+              {% endif %}
+        </div>
+
+        <div>
+          <img class="image--card" src="{{ page.lbe-image.src | prepend: site.baseurl }}" alt="{{ page.lbe-image.alt }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="separator--block-end">
+    {% include components/corner-left-bottom.svg %}
+  </div>
+</div>
+
+<div class="about container--x">
+  <div class="nav-jump-point" id="about"></div>
+
+  <div class="separator--block-start">
+    {% include components/corner-left-top.svg %}
+  </div>
+
+  <div class="container--x-wrapper separator--wrapper">
+    <div class="container--y">
+      <div class="content">
+        <div class="content-card">
+          <h2 class="content-card__heading">{{ page.about-title}}</h2>
+
+          <p class="content-card__subheading">{{ page.about-leader }}</p>
+
+          <p class="content-card__content">{{ page.about-text | markdownify}}</p>
+
+          {% if page.about-link.href %}
+          <a class="button" href="{{ page.about-link.href }}">{{ page.about-link.text }}</a>
+          {% endif %}
+        </div>
+
+        <div class="art">
+          <img class="image--card" src="{{ page.about-images[0].src | prepend: site.baseurl }}" alt="{{ page.about-images[0].alt }}" />
+        </div>
+
+        <div class="art">
+          <img class="image--card" src="{{ page.about-images[1].src | prepend: site.basurl }}" alt="{{ page.about-images[1].alt }}" />
+        </div>
+
+        <div class="art">
+          <img class='image--card' src="{{ page.about-images[2].src | prepend: site.baseurl }}" alt="{{ page.about-images[2].alt }}" />
+        </div>
+
+        <div class="art">
+          <img class="image--card" src="{{ page.about-images[3].src | prepend: site.baseurl }}" alt="{{ page.about-images[3].alt }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="separator--block-end">
+    {% include components/corner-right-bottom.svg %}
+  </div>
+</div>

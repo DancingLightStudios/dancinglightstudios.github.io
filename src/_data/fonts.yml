@@ -1,0 +1,14 @@
+- name: Montserrat
+  weight:
+    - 200
+    - 300
+    - 400
+    - 500
+    - 600
+    - 700
+
+- name: Proza+Libre
+  weight:
+    - 400
+    - 500
+    - 600

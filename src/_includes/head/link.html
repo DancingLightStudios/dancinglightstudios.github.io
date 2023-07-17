@@ -1,0 +1,7 @@
+{% assign config = site.data.constants-site %}
+
+<link rel="stylesheet" href="{{ '/assets/css/base.css' | prepend: site.baseurl }}">
+<link rel="shortcut icon" href="{{ '/assets/img/favicon-32x32.png' | prepend: site.baseurl }}" />
+<link rel="author" href="{{ '/humans.txt' | prepend: site.baseurl }}" />
+{% if config.logo %}<link rel="logo" type="image/svg" href="{{ config.logo }}" />{% endif %}
+{% feed_meta %}

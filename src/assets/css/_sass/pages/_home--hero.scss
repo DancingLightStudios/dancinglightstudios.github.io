@@ -1,0 +1,285 @@
+.c-hero {
+  // position relative to capture the positioning of the polygon blobs in the background
+  // without this, they overflow even with hidden
+  position: relative;
+  overflow: hidden;
+  padding-block-start: -g(12);
+
+  @media screen and (min-width: $bp-desktop) {
+    padding-block-start: inherit;
+  }
+
+  &__container {
+    margin-inline: auto;
+    padding-inline: -g(4);
+    min-height: 100dvh;
+
+    @media screen and (min-width: $bp-tablet) {
+      display: flex;
+      justify-content: center;
+      gap: -g(4);
+    }
+
+    @media screen and (min-width: $bp-extra-large) {
+      display: flex;
+      justify-content: center;
+      gap: -g(58);
+    }
+  }
+
+  &__content {
+    position: absolute;
+    inset: 0;
+    padding-inline: -g(4);
+    @include flex-center-vertical;
+
+    @media screen and (min-width: $bp-phone--xl) and  (min-height: 319px) {
+      padding-block: -g(16);
+      position: relative;
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      flex-basis: -g(180);
+      position: inherit;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      max-width: -g(180);
+      flex-basis: inherit;
+    }
+  }
+
+  &__heading {
+    color: $color-primary;
+    font-size: -g(7);
+    margin-block-end: -g(8);
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: -g(.75);
+
+    @media screen and (min-width: $bp-phone--xl) {
+      font-size: -g(9);
+    }
+
+    @media screen and (min-width: $bp-extra-large) {
+      margin-block-end: -g(12);
+      font-size: 4rem;
+      font-weight: normal;
+      line-height: 1;
+      letter-spacing: -g(.75);
+    }
+  }
+
+  &__leading {
+    color: $color-grey;
+    font-size: -g(4);
+    line-height: 1.2;
+    margin-block-end: -g(4);
+  }
+
+  &__body {
+    display: none;
+    font-size: -g(4);
+    max-width: 48ch;
+
+    @media screen and (min-width: $bp-phone--xl) {
+      display: inherit;
+    }
+
+    @media screen and (min-width: $bp-extra-large) {
+      max-width: inherit;
+    }
+  }
+
+  &__art {
+    position: absolute;
+    inset: 0;
+    opacity: 0.10;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: -g(8);
+
+    @media screen and (min-width: $bp-phone--xl) {
+      opacity: 0.05;
+    }
+
+    @media screen and (min-width: $bp-tablet) {
+      position: relative;
+      opacity: 1;
+      padding: 0;
+    }
+
+    @media screen and (min-width: $bp-desktop) {
+      max-width: -g(70);
+    }
+
+    @media screen and (min-width: $bp-extra-large) {
+      max-width: -g(100);
+    }
+
+    .layer-1 {
+      display: block;
+      position: absolute;
+      // display: none;
+      z-index: -3;
+
+      @media (prefers-reduced-motion) {
+        filter: blur(96px);
+      }
+
+      @media screen and (min-width: $bp-tablet) {
+        transform: inherit;
+      }
+    }
+
+    .layer-2 {
+      position: absolute;
+      display: none;
+      z-index: -2;
+
+      @media (prefers-reduced-motion) {
+        filter: blur(40px);
+      }
+
+      @media screen and (min-width: $bp-tablet) {
+        transform: inherit;
+      }
+    }
+
+    .layer-3 {
+      margin-inline: auto;
+      position: relative;
+      mix-blend-mode: overlay;
+      z-index: -1;
+      width: 100%;
+
+      @media screen and (min-width: $bp-tablet) {
+        transform: inherit;
+      }
+    }
+  }
+
+  &__blob--one {
+    display: none;
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-inline-end: 0;
+    inset-block-start: 0%;
+    z-index: -10;
+    @include margin-inline-start(-96px);
+
+    @media (prefers-reduced-motion) {
+      display: block;
+      filter: blur(64px);
+    }
+
+    @media screen and (min-width: 1280px) {
+      margin-inline-start: 192px;
+    }
+
+    .polygon {
+      aspect-ratio: 801 / 1036;
+      width: 50.0625rem;
+      opacity: 0.3;
+      background: linear-gradient(
+      -color($color-ocean-green, light),
+      -color($color-ocean-green, dark)
+      );
+      clip-path: polygon(
+      63.1% 29.5%,
+      100% 17.1%,
+      76.6% 3%,
+      48.4% 0%,
+      44.6% 4.7%,
+      54.5% 25.3%,
+      59.8% 49%,
+      55.2% 57.8%,
+      44.4% 57.2%,
+      27.8% 47.9%,
+      35.1% 81.5%,
+      0% 97.7%,
+      39.2% 100%,
+      35.2% 81.4%,
+      97.2% 52.8%,
+      63.1% 29.5%
+      );
+    }
+  }
+
+  &__blob--two {
+    display: none;
+    position: absolute;
+    inset-inline-end: 50%;
+    inset-block-start: 0;
+    z-index: -10;
+    margin-block-start: -128px;
+    margin-inline-start: -96px;
+
+    @media (prefers-reduced-motion) {
+      display: block;
+      filter: blur(64px);
+    }
+
+    @media screen and (min-width: 1024px) {
+      margin-inline-start: 96px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      margin-inline-start: 192px;
+    }
+
+    .polygon {
+      aspect-ratio: 801 / 1036;
+      width: 50.0625rem;
+      opacity: 0.3;
+      background: linear-gradient(
+      -color($color-deep-blush, light),
+      -color($color-cream-can, light)
+      );
+      transform: rotate(90deg);
+
+      clip-path: polygon(
+      63.1% 29.5%,
+      100% 17.1%,
+      76.6% 3%,
+      48.4% 0%,
+      44.6% 4.7%,
+      54.5% 25.3%,
+      59.8% 49%,
+      55.2% 57.8%,
+      44.4% 57.2%,
+      27.8% 47.9%,
+      35.1% 81.5%,
+      0% 97.7%,
+      39.2% 100%,
+      35.2% 81.4%,
+      97.2% 52.8%,
+      63.1% 29.5%
+      );
+    }
+  }
+
+  .c-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -5;
+
+    @media (prefers-reduced-motion) {
+      display: none;
+    }
+
+    .bg-wrap {
+      position: absolute;
+      inset: 0;
+
+      svg {
+        position: absolute;
+        min-height: 100%;
+        min-width: 100%;
+        inset: 0;
+      }
+    }
+  }
+}

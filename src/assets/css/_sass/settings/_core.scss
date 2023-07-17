@@ -1,0 +1,154 @@
+//
+//
+//  Core
+//  ---
+//  Setup important variables, feature flags for project
+//
+//
+
+$global-baseline: 8px !default; // All spacing metrics based on this.
+$global-radius: 3px !default;
+$paragraph-sibling-margin: true;
+
+$global-transition-delay: 0 !default;
+$global-transition-property: all !default;
+$global-transition-duration: 300ms !default;
+$global-transition-timing-function: ease-in-out !default;
+
+// In case you don't have control over generated `width` and `height` attributes
+// on `<img>` elements in your markup, but still want the images to be fluid,
+// set this to `false`.
+$static-images: true !default;
+
+// Index Levels
+$z-site-header: 90;
+$z-site-nav: 100;
+
+// Majors element sizes
+$size-header: -size(56px);
+$size-header--desktop: -size(80px);
+$size-site-nav: -size(88px);
+
+// Box Shadow Params
+$box-shadow-x: 0;
+$box-shadow-y: 2px;
+$box-shadow-blur: (2px, 10px);
+$box-shadow-spread: 0;
+$box-shadow-inset: null;
+
+// Text Shadow Params
+$text-shadow-x: 0;
+$text-shadow-y: 0;
+$text-shadow-blur: (2px, 10px, 20px);
+
+$debug-mode: false !default;
+$debug-baseline: true !default;
+$debug-outline: false !default;
+$debug-size-warning: false !default;
+
+//3:4 perfect fourth scale
+$font-sizes: (
+  "xx-display": 4.11rem,
+  // 65
+  "x-display": 3.653rem,
+  // 58
+  "display": 2.886rem,
+  // 46
+  "xxx-large": 2.027rem,
+  // 32
+  "xx-large": 1.802rem,
+  // 28
+  "x-large": 1.602rem,
+  // 25
+  "large": 1.266rem,
+  // 20
+  "normal": 1rem,
+  // 16
+  "small": 0.889rem,
+  // 14
+  "x-small": 0.79rem,
+  // 12
+  "xx-small": 0.702rem // 11,,,,,,
+);
+
+$base-font-size: 16px;
+$base-line-height: 1.6;
+//$global-font-size: -size($base-font-size);
+//$global-line-height: -size($base-font-size * 1.6);
+$global-font-smoothing: false !default;
+$global-type-legible: false !default;
+$global-measure: 65ch !default;
+
+// Define font stacks here
+// You can used existing font stacks as fallbacks
+// eg: mono spaced stack would be
+//       "'Fira-Mono', Hasklig, #{$monospace-stack}"
+$fonts: (
+  'complimentary': "Montserrat, #{$helvetica-stack}",
+  'body': "Montserrat, #{$helvetica-stack}",
+  'display': "Montserrat, #{$helvetica-stack}",
+  'mono': "#{$monospace-stack}",
+);
+
+//
+//
+//  Sizing
+//  ---
+//  Useable spacing for elements
+//
+//
+
+// Spacing values - created from the baseline
+$global-spacing-unit-micro: -size($global-baseline / 8); // 1px
+$global-spacing-unit-tiny: -size($global-baseline / 4); // 2px
+$global-spacing-unit-small: -size($global-baseline / 2); // 4px
+$global-spacing-unit: -size($global-baseline); // 8px
+$global-spacing-unit-large: -size($global-baseline * 2); // 16px
+$global-spacing-unit-xl: -size($global-baseline * 4); // 32px
+$global-spacing-unit-huge: -size($global-baseline * 8); // 64px
+$global-spacing-unit-enormous: -size($global-baseline * 16); // 128px
+$global-spacing-unit-gigantic: -size($global-baseline * 32); // 256px
+$global-spacing-unit-max: -size($global-baseline * 64); // 512px
+
+// Gutters based on grid above
+$gutter--micro: $global-spacing-unit-micro;
+$gutter--tiny: $global-spacing-unit-tiny;
+$gutter--small: $global-spacing-unit-small;
+$gutter: $global-spacing-unit;
+$gutter--large: $global-spacing-unit-large;
+$gutter--xl: $global-spacing-unit-xl;
+$gutter--huge: $global-spacing-unit-huge;
+$gutter--enormous: $global-spacing-unit-enormous;
+
+// sizes
+$width--micro: $global-spacing-unit-micro;
+$width--tiny: $global-spacing-unit-tiny;
+$width--small: $global-spacing-unit-small;
+$width: $global-spacing-unit;
+$width--large: $global-spacing-unit-large;
+$width--xl: $global-spacing-unit-xl;
+$width--huge: $global-spacing-unit-huge;
+$width--enormous: $global-spacing-unit-enormous;
+$width--gigantic: $global-spacing-unit-gigantic;
+$width--max: $global-spacing-unit-max;
+
+$height--micro: $global-spacing-unit-micro;
+$height--tiny: $global-spacing-unit-tiny;
+$height--small: $global-spacing-unit-small;
+$height: $global-spacing-unit;
+$height--large: $global-spacing-unit-large;
+$height--xl: $global-spacing-unit-xl;
+$height--huge: $global-spacing-unit-huge;
+$height--enormous: $global-spacing-unit-enormous;
+$height--gigantic: $global-spacing-unit-gigantic;
+$height--max: $global-spacing-unit-max;
+
+$size--max-container: -size($global-baseline * 160);
+
+$radius--none: 0;
+$radius--small: 2px;
+$radius: 4px;
+$radius--medium: 6px;
+$radius--large: 8px;
+$radius--xl: 12px;
+$radius--huge: 16px;

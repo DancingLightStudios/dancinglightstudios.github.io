@@ -1,0 +1,113 @@
+.site-nav {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: $z-site-nav;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  background-color: white;
+  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.03),
+              0 0px 5px 0 rgba(0, 0, 0, 0.05),
+              0 0px 2px 0 rgba(0, 0, 0, 0.1);
+
+  @media screen and (min-width: $bp-desktop) {
+    position: absolute;
+    box-shadow: none;
+    background-color: transparent;
+  }
+
+  &__container {
+    margin-inline: auto;
+    max-width: $bp-large;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (min-width: 1024px) {
+      padding-inline: $gutter--xl;
+      padding-block: $gutter--large;
+    }
+  }
+
+  &__logo {
+    flex-shrink: 1;
+    display: block;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    order: 2;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    order: 4;
+    flex-basis: calc(100%);
+    overflow: hidden;
+    max-height: 0;
+    @include transition(max-height);
+
+    @media screen and (min-width: 1024px) {
+      order: 2;
+      flex-basis: inherit;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      column-gap: $gutter--large;
+      width: 100%;
+
+      @media screen and (min-width: 1024px) {
+        padding-block-start: 0;
+        flex-direction: row;
+      }
+
+      > span {
+        width: 0;
+        @include transition(width);
+
+        &:hover {
+          width: 100%;
+          background-color: $color-secondary;
+        }
+
+        @media screen and (min-width: $bp-desktop) {
+          width: inherit;
+        }
+
+        a {
+          white-space: nowrap;
+          display: block;
+          padding: $gutter;
+
+          @media screen and (min-width: 1024px) {
+            margin-bottom: 0;
+          }
+
+          span {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  &__login-link {
+    margin-inline-end: $gutter;
+    order: 3;
+    text-decoration: none;
+  }
+
+  &__toggle {
+    margin: $gutter;
+  }
+}
+

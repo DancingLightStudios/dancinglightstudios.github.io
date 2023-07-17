@@ -1,0 +1,90 @@
+//
+//
+//  Margin
+//  ---
+//  Helpers to define margins as multiples of the baseline grid
+//  Needs to maintain similarity with default css properties
+//
+//
+
+@mixin margin-inline-start($size) {
+  @if (-isvar($size)) {
+    margin-inline-start: var($size);
+  } @else {
+    margin-inline-start: $size;
+  }
+}
+
+@mixin margin-inline-end($size) {
+  @if (-isvar($size)) {
+    margin-inline-end: var($size);
+  } @else {
+    margin-inline-end: $size;
+  }
+}
+
+@mixin margin-block-start($size) {
+  @if (-isvar($size)) {
+    margin-block-start: var($size);
+  } @else {
+    margin-block-start: $size;
+  }
+}
+
+@mixin margin-block-end($size) {
+  @if (-isvar($size)) {
+    margin-block-end: var($size);
+  } @else {
+    margin-block-end: $size;
+  }
+}
+
+@mixin margin-block($start, $end: null) {
+  @if ($end == null) {
+    $end: $start;
+  }
+
+  @include margin-block-start($start);
+  @include margin-block-end($end);
+}
+
+@mixin margin-inline($start, $end: null) {
+  @if ($end == null) {
+    $end: $start;
+  }
+
+  @if (-isvar($start)) {
+    $start: var($start);
+  }
+
+  @if (-isvar($end)) {
+    $end: var($end);
+  }
+
+  @include margin-inline-start($start);
+  @include margin-inline-end($end);
+}
+
+@mixin margin(
+  $blockstart,
+  $inlineend: null,
+  $blockend: null,
+  $inlinestart: null
+) {
+  @if ($inlineend == null) {
+    $inlineend: $blockstart;
+  }
+
+  @if ($inlinestart == null) {
+    $inlinestart: $inlineend;
+  }
+
+  @if ($blockend == null) {
+    $blockend: $blockstart;
+  }
+
+  @include margin-block-start($blockstart);
+  @include margin-inline-end($inlineend);
+  @include margin-block-end($blockend);
+  @include margin-inline-start($inlinestart);
+}

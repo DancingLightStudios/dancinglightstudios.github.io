@@ -1,0 +1,50 @@
+.site-footer {
+  max-width: $size--max-container;
+
+  @include margin-inline(auto);
+  @include padding-block($gutter--xl);
+
+  @media screen and (min-width: $bp-tablet) {
+    @include padding-block($gutter--large);
+  }
+
+  @media screen and (min-width: $bp-desktop) {
+    @include padding-block($gutter--huge);
+  }
+
+  .byline {
+    align-items: center;
+    color: $color-grey;
+    row-gap: $gutter--large;
+    @include flex-column;
+
+    img {
+      height: $height--gigantic;
+      width: $width--gigantic;
+    }
+
+    span {
+      font-size: fs(large);
+      font-style: italic;
+    }
+  }
+
+  .site-footer__nav {
+    div {
+      justify-content: space-between;
+      margin-block-start: $gutter--xl;
+      gap: $gutter;
+      @include flex-column;
+      text-align: center;
+
+      @media screen and (min-width: $bp-tablet) {
+        margin-block-start: $gutter--large;
+        flex-direction: row;
+      }
+
+      @media screen and (min-width: $bp-desktop) {
+        margin-block-start: $gutter--huge;
+      }
+    }
+  }
+}

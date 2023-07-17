@@ -1,0 +1,22 @@
+{% assign page_nav = site.data.site-nav-home.items %}
+
+{% include html/doctype.html %}
+{% include html/license.html -%}
+
+<html lang="{{site.lang}}">
+{% include html/head.html %}
+{% include fragment/body-tag.html %}
+{% include components/jump-to-navigation.html %}
+{% include components/jump-to-top.html %}
+{% include components/site-header.html %}
+
+<main>
+  {{content}}
+</main>
+
+{% include components/site-colophon.html %}
+{% include components/site-footer.html %}
+{% include components/site-copyright.html %}
+
+{% include html/scripts.html %}
+<!-- {% include html/analytics.html %} -->

@@ -1,0 +1,30 @@
+//
+//
+//  Fonts
+//  ---
+//  Finds and inserts the font family based on the type sent. Basic usage is simply:
+//
+//    @include font(body);
+//
+//
+
+@function font($type) {
+  @return unquote(map-get($fonts, $type));
+}
+
+@mixin font-display {
+  font-family: font(display);
+}
+
+@mixin font-body {
+  font-family: font(body);
+}
+
+@mixin font-complimentary {
+  font-family: font(complimentary);
+}
+
+@mixin font-mono {
+  font-family: font(mono);
+}
+

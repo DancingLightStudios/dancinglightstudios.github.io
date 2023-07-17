@@ -1,0 +1,12 @@
+//
+//
+//  Icons
+//  ---
+//
+//
+
+@mixin icon-color($color) {
+  path {
+    fill: $color;
+  }
+}

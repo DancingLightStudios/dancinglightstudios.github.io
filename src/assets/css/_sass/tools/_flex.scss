@@ -1,0 +1,159 @@
+//
+//
+//  Flex
+//  ---
+//  Helper mixins when working with flexbox
+//
+//
+
+@mixin flex-row {
+  display: flex;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// sets an element to flex-column up to a certain breakpoint
+//
+// $switch-point: breakpoint to change to row
+//
+// example: nav { @include flex-column-to-row(768px) }
+@mixin flex-column-to-row($switch-point: $bp-desktop) {
+  flex-direction: column;
+
+  @media screen and (min-width: $switch-point) {
+    flex-direction: row;
+  }
+}
+
+// sets an element to flex-wrap up to a certain breakpoint
+//
+// $switch-point: breakpoint to change to no wrap
+//
+// example: nav { @include flex-wrap-to-nowrap(768px) }
+@mixin flex-wrap-to-nowrap($switch-point: $bp-desktop) {
+  flex-wrap: wrap;
+
+  @media screen and (min-width: $switch-point) {
+    flex-wrap: nowrap;
+  }
+}
+
+// sets element to flex-wrap at a certain breakpoint
+//
+// $switch-point: breakpoint to change to wrap
+//
+// example: nav { @include flex-nowrap-to-wrap(768px) }
+@mixin flex-nowrap-to-wrap($switch-point: $bp-desktop) {
+  @media screen and (min-width: $switch-point) {
+    flex-wrap: wrap;
+  }
+}
+
+// set element flex to shrink to 50% width
+//
+// $space-between: !optional define a gutter that will be subtracted from the basis width
+//
+// example: .columned-layout p { @include flex-half(10px) }
+//   will output elements with 10px spacing between them
+@mixin flex-half($space-between: null) {
+  $basis: 50%;
+
+  @if ($space-between) {
+    $basis: calc(50% - #{$space-between / 2});
+  }
+
+  flex-basis: $basis;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+// set element flex to size to take up 1/count of the container
+//
+// $count: !required number of elements to place beside eachother
+// $space-between: !optional space that will separate each element
+// example: .columned-layout p { @include flex-even(3, 10px) }
+//   will output 3 column layout with 10px spacing
+@mixin flex-even($count, $space-between: null) {
+  $basis: 100% / $count;
+
+  @if ($space-between) {
+    $basis: calc((100% - #{$space-between * ($count - 1)}) / #{$count});
+  }
+
+  flex-basis: $basis;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: $basis;
+}
+
+// when added to a parent flex element, force children to take up 50% of the available space
+//
+// $space-between: optional! space between children
+// $justify-content: optional! standard flex for justifying children
+//
+// example header { display: flex; @include flex-children-half(10px, flex-end) }
+@mixin flex-children-half($space-between, $justify-content: null) {
+  $basis: 50%;
+
+  @if ($space-between) {
+    $basis: calc(50% - #{$space-between / 2});
+  }
+
+  > * {
+    flex-basis: $basis;
+    flex-grow: 0;
+    flex-shrink: 1;
+  }
+
+  @if ($justify-content != null) {
+    justify-content: $justify-content;
+  }
+}
+
+// when added to a parent flex element, force children to split the available space evenly
+//
+// $count: !required number of children
+// $space-between: optional! space between children
+// $justify-content: optional! standard flex for justifying children
+//
+// example header { display: flex; @include flex-children-even(10px, flex-end) }
+@mixin flex-children-even(
+  $count,
+  $space-between: null,
+  $justify-content: null
+) {
+  $basis: 100% / $count;
+
+  @if ($space-between) {
+    $basis: calc((100% - #{$space-between * ($count - 1)}) / #{$count});
+  }
+
+  > * {
+    flex-basis: $basis;
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: $basis;
+  }
+
+  @if ($justify-content != null) {
+    justify-content: $justify-content;
+  }
+}
+
+// set element max-width to 50% of available space
+//
+// $space-between: !optional space for margin around element
+//
+// example: .pull-quote { @include half-width(10px) }
+@mixin half-width($space-between) {
+  $width: 50%;
+
+  @if ($space-between) {
+    $width: calc(50% - #{$space-between / 2});
+  }
+
+  max-width: $width;
+}

@@ -1,0 +1,18 @@
+//
+//
+//  Transitions
+//  ---
+//  Helper to define transitions while maintaining global settings
+//  Takes in a list of properties that can be transitions
+//
+//  example: .button::hover { @include transition(opacity) }
+//  example: .button::active { @include transition(opacity, scale) }
+//
+//
+
+@mixin transition($properties...) {
+  transition-property: if ($properties, $properties, $global-transition-property);
+  transition-duration: $global-transition-duration;
+  transition-timing-function: $global-transition-timing-function;
+  transition-delay: $global-transition-delay;
+}

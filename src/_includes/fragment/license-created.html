@@ -1,0 +1,2 @@
+{%- assign config = site.data.constants-site -%}
+{% if config.title != null %}{{ config.title }}{% if site.creator != null %} by {{ site.creator }}{% endif %}{% else if site.creator != null %}created by: {{ site.creator}}{% endif %}

@@ -1,0 +1,5 @@
+{% if include.phone %}
+<a href="tel:{{ include.phone.value }}">
+  <span itemprop="telephone">{{ include.phone.display }}</span>
+</a>
+{% endif %}

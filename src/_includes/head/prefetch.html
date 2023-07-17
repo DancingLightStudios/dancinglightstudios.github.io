@@ -1,0 +1,7 @@
+{% if site.dns-prefetch %}
+{% for remote in site.dns-prefetch %}<link rel="dns-prefetch" href="//{{remote}}">
+{% endfor %}{% endif %}
+
+{% if site.resource-prefetch %}
+{% for resource in site.resource-prefetch %}<link rel="prefetch" href="{{resource}}">
+{% endfor %}{% endif %}

@@ -1,0 +1,101 @@
+//
+//
+//  Font-Size
+//  ---
+//  Helpers for defining font-sizes at certain breakpoints
+//  forces alignment with the baseline grid
+//
+//
+
+@function fs($size) {
+  $fs: map-get($font-sizes, $size);
+  @return $fs;
+}
+
+// ----------------------------------------------------------
+
+// Original font-size mixin has been deprecated in favour of simpler rem style font sizing
+
+// sets the element font size rounded to the nearest multiple of baseline grid
+//
+// $default !required default font size
+// $args...: !optional font size to use at each breakpoint in order of the array in settings.breakpoints
+//
+// If you need to define custom sizes that don't fit with the intervals in baseline, you can add `true` as any argument. This will set each value passed in as the value set.
+// example font-size(16, true, 8, 7, 9, 23) will use those font sizes in pixels for each breakpoint. instead of rounding to the nearest baseline
+//
+// example h1 { @include font-size(16, 32, 64) }
+//   ouputs an h1 element that is 16px by default, 32px on a tablet, and 64px on a desktop
+@mixin font-size($default, $args...) {
+  @warn 'font-size has been deprecated, use @function fs()';
+  $length: length($breakpoints);
+  $i: 1;
+  $true: false;
+  $filtered-args: ();
+
+  @each $var in $args {
+    @if ($var == true) {
+      $true: true;
+    } @else {
+      $filtered-args: append($filtered-args, $var);
+    }
+  }
+
+  @if ($true == true) {
+    font-size: unquote($default + "px");
+  } @else {
+    font-size: -size($default);
+  }
+
+  line-height: -multiple($default);
+
+  @each $var in $filtered_args {
+    @if ($length >= $i) {
+      $bp: nth(nth($breakpoints, $i), 2);
+
+      @media screen and (min-width: $bp) {
+        @if ($true == true) {
+          font-size: unquote($var + "px");
+        } @else {
+          font-size: -size($var);
+        }
+
+        line-height: -multiple($var);
+      }
+    }
+
+    $i: $i + 1;
+  }
+}
+
+@mixin h1 {
+  @include font-size(12);
+}
+
+@mixin h2 {
+  @include font-size(32);
+}
+
+@mixin h3 {
+  @include font-size(24);
+}
+
+@mixin h4 {
+  @include font-size(24);
+}
+
+@mixin h5 {
+  @include font-size(16);
+}
+
+@mixin body-large {
+  @include font-size(16);
+}
+
+@mixin body {
+  @include font-size(16);
+}
+
+@mixin small {
+  @include font-size(8);
+}

@@ -1,0 +1,25 @@
+//
+//
+//  Border
+//  ---
+//  Helper mixins for defining borders
+//
+//
+
+@mixin border-solid($size, $color, $positions...) {
+  @if (-isvar($size)) {
+    $size: var($size);
+  }
+
+  @if (-isvar($color)) {
+    $color: var($color);
+  }
+
+  @if (length($positions) > 0) {
+    @each $position in $positions {
+      border-#{$position}: $size solid $color;
+    }
+  } @else {
+    border: $size solid $color;
+  }
+}

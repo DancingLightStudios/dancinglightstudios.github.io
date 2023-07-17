@@ -1,0 +1,34 @@
+//
+//
+//  Buttons
+//  ---
+//  Don't forget hover, active states
+//
+//
+
+button,
+.button {
+  border: none;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  @include border-radius-size($radius--medium);
+  @include padding($gutter--small, $gutter--large);
+  font-weight: normal;
+
+  > * {
+    vertical-align: middle;
+  }
+}
+
+a.button {
+  text-decoration: none;
+}
+
+button.button--link,
+.button--link {
+  display: inline-block;
+  border: none;
+  outline: none;
+  background: none;
+  text-decoration: none;
+}

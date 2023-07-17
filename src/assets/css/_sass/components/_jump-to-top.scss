@@ -1,0 +1,12 @@
+.jump-to-top-link {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+
+  @include transition(opacity)
+
+  &.visible {
+    opacity: 1;
+  }
+}

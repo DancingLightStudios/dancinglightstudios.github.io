@@ -1,0 +1,10 @@
+{
+  "extends": "eslint-config-airbnb-base",
+  "globals": {
+    "$": true,
+    "document": true
+  },
+  "rules": {
+    "no-unused-expressions": [2, { allowTernary: true }]
+  }
+}

@@ -1,8 +1,0 @@
----
-items:
-  - text: Home
-    url: "/"
-    class: "md:hidden"
-  - text: Email Us
-    url: "mailto:info@dancinglightstudios.ca"
-    class: "bg-indigo-500 rounded-lg drop-shadow-lg"
