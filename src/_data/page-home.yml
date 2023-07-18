@@ -1,13 +1,28 @@
 hero-title: Everything is<br>about to change.
+hero-leader: "Embark on a journey where innovation ignites imagination. "
 pl-title: Physical Literacy
+pl-leader: Stimulating activity beyond the playground
 pl-text: Unlocking the power of movement, we merge technology and physical
   education, creating a new world of active learning.
+pl-points:
+  - title: Empowering Movement Education.
+    body: Elevate physical literacy with interactive, tech-fueled experiences.
+    icon: lightning-bolt
+  - title: " Inclusivity in Motion."
+    body: Tailoring accessibility for all, breaking barriers and building bridges
+      for all learners.
+    icon: people
+  - title: Transforming the Landscape.
+    body: Unleash the future of physical literacy with boundary-pushing immersive
+      environments.
+    icon: light-bulb
 pl-image:
   src: /images/uploads/gregdaynes_a_gynasium_of_kids_playing_a_game_of_floor_is_lava_b34fa2a7-feaf-4780-9042-9950a11b16ff.jpg
   alt: pl image
 pl-link:
   text: Learn more about Physical Literacy
   href: /physical-literacy
+lbe-title: Location Based Entertainment
 lbe-leader: Wow beyond screens.
 lbe-text: Forge captivating landscapes, blending innovation with sensory wonder.
 lbe-points:
@@ -27,6 +42,7 @@ lbe-image:
 lbe-link:
   text: Find out about Location Based Entertainment
   href: /location-based-entertainment
+about-title: Dancing Light Studios
 about-leader: "Empowering the Future: Education and Entertainment Reimagined."
 about-text: >-
   At Dancing Light Studios, we're painting the horizon with dreams. Envisage a
@@ -42,28 +58,12 @@ about-text: >-
 hero-primary-button:
   key: Get Started
   value: "#"
-hero-leader: Embark on a journey where innovation ignites imagination.
-pl-leader: Stimulating activity beyond the playground
-pl-points:
-  - title: Empowering Movement Education.
-    body: Elevate physical literacy with interactive, tech-fueled experiences.
-    icon: lightning-bolt
-  - title: " Inclusivity in Motion."
-    body: Tailoring accessibility for all, breaking barriers and building bridges
-      for all learners.
-    icon: people
-  - title: Transforming the Landscape.
-    body: Unleash the future of physical literacy with boundary-pushing immersive
-      environments.
-    icon: light-bulb
 hero-body: Dancing Light Studios is poised to revolutionize the realms of
   education and entertainment through awe-inspiring AR, VR, and MR experiences.
   Our technology is driven by a passion to empower, engage, and enlighten. The
   canvas of possibilities is endless, and we’re painting it with pixels of
   progress. A new era beckons, and Dancing Light Studios is leading the way. Be
   part of the transformation – because everything is about to change.
-lbe-title: Location Based Entertainment
-about-title: Dancing Light Studios
 about-images:
   - alt: Hello 1
     src: /images/uploads/gregdaynes_extremely_detailed_exihibition_hall_for_a_trade_show_abeeb4ca-8913-4e1d-9af6-8471f51be851.jpg
@@ -73,9 +73,9 @@ about-images:
     src: /images/uploads/gregdaynes_museum_exhibit_of_wild_animals_in_augmented_reality_8df01a76-5683-4eac-a3a6-f64a575771f5.jpg
   - alt: Hello 4
     src: /images/uploads/gregdaynes_museum_exhibit_of_an_pirate_ship_with_people_looking_7a5e34c1-c9e2-40db-a3bd-7f964b7e5677.jpg
-hero-secondary-button:
-  key: Live Demo
-  value: "#"
 about-link:
   text: More about Dancing Light Studios
   href: /about
+hero-secondary-button:
+  key: Live Demo
+  value: "#"
