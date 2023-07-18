@@ -1,6 +1,0 @@
-.jekyll-metadata
-node_modules
-vendor
-.DS_Store
-.sass-cache
-dist/*
