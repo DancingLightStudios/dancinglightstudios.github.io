@@ -1,0 +1,13 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+[NAME] - [Role] - [Handle]
+
+# SITE
+
+Last update: 2023-07-18 18:24:23 +0000
+
+# Resource & Copyrights
+Hero Color Background - https://codepen.io/alvarotrigo/pen/qBMMyxz
