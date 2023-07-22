@@ -203,6 +203,86 @@ collections:
     editor:
       preview: false
     files:
+      # Colors ---------------------------------------------------------------------
+      - label: Colors
+        name: colors
+        file: "src/_data/colors.yml"
+        fields:
+          - label: Colors
+            name: colors
+            widget: list
+            collapsed: false
+            create: true
+            fields:
+              - label: Name
+                name: name
+                widget: string
+              - label: Value
+                name: value
+                widget: color
+                enableAlpha: true
+                allowInput: true
+              - label: Variations
+                name: variations
+                widget: list
+                collapsed: false
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                  - label: Value
+                    name: value
+                    widget: color
+                    enableAlpha: true
+                    allowInput: true
+      # Fonts ----------------------------------------------------------------------
+      - label: Fonts
+        name: fonts
+        file: "src/_data/fonts.yml"
+        fields:
+          - label: Fonts
+            name: fonts
+            widget: object
+            collapsed: false
+            fields:
+              - label: Sizes
+                name: sizes
+                widget: list
+                collapsed: false
+                create: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                  - label: Value
+                    name: value
+                    widget: string
+                  - label: Leading
+                    name: leading
+                    widget: number
+                  - label: Kerning
+                    name: kerning
+                    widget: number
+              - label: Faces
+                name: faces
+                widget: list
+                collapsed: false
+                create: true
+                fields:
+                  - label: Name
+                    name: name
+                    widget: string
+                  - label: Weights
+                    name: weights
+                    widget: list
+                    collapsed: false
+                    fields:
+                      - label: Weight
+                        name: value
+                        widget: string
+                      - label: Italic
+                        name: italic
+                        widget: boolean
       # Site Settings -----------------------------------------------------------
       - label: Site
         name: site

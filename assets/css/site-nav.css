@@ -232,6 +232,7 @@
   height: inherit;
   top: 100%;
   position: absolute;
+  margin-top: 0;
 }
 
 @media screen and (min-width: 1024px) {
