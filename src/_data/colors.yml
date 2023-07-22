@@ -1,0 +1,34 @@
+colors:
+  - name: White
+    value: "#ffffff"
+  - name: Black
+    value: "#000000"
+    variations:
+      - name: grey--light
+        value: "#dddddd"
+      - name: grey--dark
+        value: "#333333"
+  - name: Red
+    value: "#ff0000"
+    variations:
+      - name: red--light
+        value: "#ff7f7f"
+      - name: red--dark
+        value: "#800000"
+    color: "#a61313"
+  - name: Green
+    value: "#00ff00"
+    variations:
+      - name: Green--light
+        value: "#80ff80"
+      - name: Green--dark
+        value: "#008000"
+    color: "#6d4141"
+  - name: Blue
+    value: "#0000ff"
+    variations:
+      - name: Blue--light
+        value: "#8080ff"
+      - name: Blue--dark
+        value: "#000080"
+    color: "#7b3c3c"

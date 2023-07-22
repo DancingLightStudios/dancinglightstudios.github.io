@@ -1,0 +1,14 @@
+{% assign filename = include.file | split: '.' %}
+{% assign base = filename[0] %}
+{% assign title = base | replace: '_styleguide/', '' | replace: '-', ' ' | upcase %}
+
+<!-- {{ base }} -->
+<section class="styleguide-section {{ base }}">
+  <h1 class="styleguide-section__title {{ base }}__title" id="jump-to-{{ base }}">{{ title }}</h1>
+
+  <div class="styleguide-section__wrapper {{ base }}__wrapper">
+    <div class="styleguide-section__content {{ base }}__content">
+      {% include_relative {{ include.file }} base=base %}
+    </div>
+  </div>
+</section>

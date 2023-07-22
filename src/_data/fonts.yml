@@ -1,14 +1,11 @@
-- name: Montserrat
-  weight:
-    - 200
-    - 300
-    - 400
-    - 500
-    - 600
-    - 700
-
-- name: Proza+Libre
-  weight:
-    - 400
-    - 500
-    - 600
+fonts:
+  - name: Montserrat
+    weights:
+      - value: 200
+        italic: true
+      - value: 400
+        italic: true
+      - value: 600
+        italic: false
+      - value: 800
+        italic: false

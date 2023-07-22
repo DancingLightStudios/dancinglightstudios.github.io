@@ -1,10 +1,7 @@
 {%- if site.web-app-enabled %}
 
 <!-- Single Apple Touch Icon -->
-<link rel="apple-touch-icon-precomposed" href="{{ '/assets/img/apple-touch-icon-152x152.png' | prepend: site.baseurl }}">
-
-<!-- Windows 8 / RT -->
-<meta name="msapplication-TileImage" content="{{ '/assets/img/apple-touch-icon-152x152.png' | prepend: site.baseurl }}">
-<meta name="msapplication-TileColor" content="{{site.web-app-color}}">
+<link rel="icon" sizes="192x192" href="{{ '/assets/img/icon-192.png' | prepend: site.baseurl }}">
+<link rel="apple-touch-icon" href="{{ '/assets/img/icon-192.png' | prepend: site.baseurl }}">
 
 {% endif %}

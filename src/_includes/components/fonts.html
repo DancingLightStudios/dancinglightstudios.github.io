@@ -1,15 +1,18 @@
 {% if site.fonts -%}
   {% capture fontstring %}
-  {%- for font in site.data.fonts -%}
+  {%- for font in site.data.fonts.fonts -%}
     {% capture fontstack %}
       {{ font.name }}:ital,wght@
 
-      {%- if font.weight -%}
-        {%- for weight in font.weight -%}
-          0,{{ weight }}_
+      {%- if font.weights -%}
+        {%- for weight in font.weights -%}
+          0,{{ weight.value }}_
         {%- endfor -%}
-        {%- for weight in font.weight -%}
-          1,{{ weight }}_
+
+        {%- for weight in font.weights -%}
+          {%- if weight.italic -%}
+          1,{{ weight.value }}_
+          {%- endif -%}
         {%- endfor -%}
       {%- endif -%}
     {% endcapture %}
@@ -18,9 +21,10 @@
   {%- endfor -%}
   {% endcapture %}
 
-  {%- capture fonts %}https://fonts.googleapis.com/css2?family={{ fontstring | split: ' ' | join: '&family=' }}{% endcapture %}
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="{{ fonts }}&display=swap" rel="stylesheet">
+  {% if fontstring.size > 0 %}
+    {%- capture fonts %}https://fonts.googleapis.com/css2?family={{ fontstring | split: ' ' | join: '&family=' }}{% endcapture %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="{{ fonts }}&display=swap" rel="stylesheet">
+  {% endif %}
 {% endif %}

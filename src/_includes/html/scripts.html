@@ -1,3 +1,7 @@
 <script src="{{ '/assets/js/jump-to-top.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/assets/js/masonry.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/assets/js/smooth-scroll.js' | prepend: site.baseurl }}"></script>
+
+{% if page.js %}
+<script src="{{ page.js | prepend: site.baseurl }}"></script>
+{% endif %}
