@@ -71,6 +71,10 @@ module Jekyll
         hashed_file_name = Digest::MD5.hexdigest(css_output) + '.css'
 
         file = Jekyll::GeneratedStaticFile.new(site, @asset_path, hashed_file_name)
+
+        # skip file for output if already in the list
+        return if site.static_files.find { |x| x.name == file.name }
+
         file.file_contents = css_output
         page.data['css'] = file.url
 
