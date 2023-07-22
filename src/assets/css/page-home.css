@@ -40,7 +40,7 @@ body.page-home {
   padding-inline: 1rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .hero__header {
     position: inherit;
   }
@@ -101,7 +101,7 @@ body.page-home {
 
 @media screen and (min-width: 414px) {
   .hero__art {
-    opacity: 0.05;
+    opacity: 0.20;
   }
 }
 
@@ -116,7 +116,7 @@ body.page-home {
 @media screen and (min-width: 1024px) {
   .hero__art {
     max-width: 18rem;
-    position: relative;
+    transform: translateY(-1rem);
   }
 }
 
@@ -439,7 +439,7 @@ body.page-home {
 }
 
 .about .button {
-  --_background--dark: var(--c-cream-can--dark);
+  --_background--dark: var(--c-grey-30);
   --_button: var(--c-deep-blush);
   --_button--light: var(--c-deep-blush--light);
   --_button--dark: var(--c-deep-blush--dark);
