@@ -185,7 +185,7 @@
    * Page Header
    */
   .header {
-    padding-block: 2rem;
+    padding-block: 4rem;
   }
 
   .header__heading {
@@ -202,9 +202,15 @@
     margin-block-end: 0;
   }
 
+  @media screen and (min-width: 768px) {
+    .header {
+      padding-block: 6rem;
+    }
+  }
+
   @media screen and (min-width: 1024px) {
     .header {
-      padding-block: 4rem;
+      padding-block: 10rem;
     }
   }
 
