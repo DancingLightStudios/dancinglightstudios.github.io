@@ -1,34 +1,182 @@
 colors:
-  - name: White
-    value: "#ffffff"
-  - name: Black
+  - name: black
     value: "#000000"
     variations:
-      - name: grey--light
-        value: "#dddddd"
-      - name: grey--dark
-        value: "#333333"
-  - name: Red
-    value: "#ff0000"
+      - name: white
+        value: "#ffffff"
+      - name: grey-10
+        value: "#eee"
+      - name: grey-20
+        value: "#ccc"
+      - name: grey-30
+        value: "#aaa"
+      - name: grey-40
+        value: "#999"
+      - name: grey-50
+        value: "#777"
+      - name: grey-60
+        value: "#666"
+      - name: grey-70
+        value: "#444"
+      - name: grey-80
+        value: "#333"
+      - name: grey-90
+        value: "#111"
+
+  - name: primary
+    value: "#5e528f"
     variations:
-      - name: red--light
-        value: "#ff7f7f"
-      - name: red--dark
-        value: "#800000"
-    color: "#a61313"
-  - name: Green
-    value: "#00ff00"
+      - name: primary--dark
+        value: "#53497f"
+      - name: primary--light
+        value: "#695b9f"
+      - name: primary--lightest
+        value: "#998ec7"
+
+  - name: secondary
+    value: "#dd6aa4"
     variations:
-      - name: Green--light
-        value: "#80ff80"
-      - name: Green--dark
-        value: "#008000"
-    color: "#6d4141"
-  - name: Blue
-    value: "#0000ff"
+      - name: secondary--dark
+        value: "#d85597"
+      - name: secondary--light
+        value: "#e27fb1"
+      - name: secondary--lightest
+        value: "#e27fb1"
+
+  - name: tertiary
+    value: "#f4bb5f"
     variations:
-      - name: Blue--light
-        value: "#8080ff"
-      - name: Blue--dark
-        value: "#000080"
-    color: "#7b3c3c"
+      - name: tertiary--dark
+        value: "#f2b147"
+      - name: tertiary--light
+        value: "#f6c577"
+
+  - name: accent
+    value: "#539267"
+    variations:
+      - name: accent--dark
+        value: "#4a825c"
+      - name: accent--light
+        value: "#5ca272"
+      - name: accent--lightest
+        value: "#59a670"
+
+  - name: deep-blush
+    value: "#dd6aa4"
+    variations:
+      - name: deep-blush--dark
+        value: "#d85597"
+      - name: deep-blush--light
+        value: "#e27fb1"
+
+  - name: butterfly-bush
+    value: "#5e528f"
+    variations:
+      - name: butterfly-bush--dark
+        value: "#53497f"
+      - name: butterfly-bush--light
+        value: "#695b9f"
+
+  - name: chambray
+    value: "#3a6099"
+    variations:
+      - name: chambray--dark
+        value: "#335486"
+      - name: chambray--light
+        value: "#416cab"
+
+  - name: fruit-salad
+    value: "#539267"
+    variations:
+      - name: fruit-salad--dark
+        value: "#4a825c"
+      - name: fruit-salad--light
+        value: "#5ca272"
+
+  - name: wedgewood
+    value: "#449295"
+    variations:
+      - name: wedgewood--dark
+        value: "#3c8183"
+      - name: wedgewood--light
+        value: "#4ca3a6"
+
+  - name: blue-dianne
+    value: "#235159"
+    variations:
+      - name: blue-dianne--dark
+        value: "#1c414d"
+      - name: blue-dianne--light
+        value: "#2a6173"
+
+  - name: ocean-green
+    value: "#489a8e"
+    variations:
+      - name: ocean-green--dark
+        value: "#40897e"
+      - name: ocean-green--light
+        value: "#50ab9e"
+
+  - name: deco
+    value: "#cde19f"
+    variations:
+      - name: deco--dark
+        value: "#c3db8c"
+      - name: deco--light
+        value: "#d7e7b2"
+
+  - name: celery
+    value: "#a0bf56"
+    variations:
+      - name: celery--dark
+        value: "#95b645"
+      - name: celery--light
+        value: "#aac668"
+
+  - name: fern-green
+    value: "#507f44"
+    variations:
+      - name: fern-green--dark
+        value: "#466e3b"
+      - name: fern-green--light
+        value: "#5a904d"
+
+  - name: surf
+    value: "#b8d9b9"
+    variations:
+      - name: surf--dark
+        value: "#a7d0a9"
+      - name: surf--light
+        value: "#c9e2c9"
+
+  - name: wild-rice
+    value: "#eae88e"
+    variations:
+      - name: wild-rice--dark
+        value: "#e6e478"
+      - name: wild-rice--light
+        value: "#eeeca3"
+
+  - name: cream-can
+    value: "#f4bb5f"
+    variations:
+      - name: cream-can--dark
+        value: "#f2b147"
+      - name: cream-can--light
+        value: "#f6c577"
+
+  - name: burnt-sienna
+    value: "#ec774a"
+    variations:
+      - name: burnt-sienna--dark
+        value: "#ea6633"
+      - name: burnt-sienna--light
+        value: "#ee8861"
+
+  - name: golden-sand
+    value: "#f4cc60"
+    variations:
+      - name: golden-sand--dark
+        value: "#f6d478"
+      - name: golden-sand--light
+        value: "#f8dc90"

@@ -1,102 +1,30 @@
+---
+---
+@layer variables, reset, generic, element, component, page, utility
+
 @layer variables, reset, layout, component, decorator, utility;
 
 @layer variables {
   body {
+    {%- for color in site.data.colors.colors %}
+    {%- if color.variations %}
+      {%- assign variations = color.variations %}
+    {%- else %}
+      {%- assign variations = null | compact %}
+    {%- endif %}
+
+    {%- assign colors = color | concat: variations  %}
+    {%- for color in colors %}
+    --c-{{color.name | downcase }}: {{color.value}};
+    {%- endfor %}
+    {%- endfor %}
+
     /* Scaling Perfect fifth (1.500) */
-    --fs-micro: 0.5rem;
-    --fs-tiny: 0.75rem;
-    --fs-small: 0.875rem;
-    --fs-base: 1rem;
-    --fs-big: 1.5rem;
-    --fs-large: 2.25rem;
-    --fs-xl: 3.75rem;
-
-    --lh-base: 1.5;
-    --lh-big: 1;
-    --lh-large: 1;
-    --lh-xl: 1;
-
-    --ls-base: 0;
-    --ls-big: 0;
-    --ls-large: -1px;
-    --ls-xl: 0;
-
-    --c-deep-blush: #dd6aa4;
-    --c-deep-blush--dark: #d85597;
-    --c-deep-blush--light: #e27fb1;
-    --c-butterfly-bush:#5e528f;
-    --c-butterfly-bush--dark: #53497f;
-    --c-butterfly-bush--light: #695b9f;
-    --c-chambray: #3a6099;
-    --c-chambray--dark: #335486;
-    --c-chambray--light: #416cab;
-    --c-fruit-salad: #539267;
-    --c-fruit-salad--dark: #4a825c;
-    --c-fruit-salad--light: #5ca272;
-    --c-wedgewood: #449295;
-    --c-wedgewood--dark: #3c8183;
-    --c-wedgewood--light: #4ca3a6;
-    --c-blue-dianne: #235159;
-    --c-blue-dianne--dark: #1c414d;
-    --c-blue-dianne--light: #2a6173;
-    --c-ocean-green: #489a8e;
-    --c-ocean-green--dark: #40897e;
-    --c-ocean-green--light: #50ab9e;
-    --c-deco: #cde19f;
-    --c-deco--dark: #c3db8c;
-    --c-deco--light: #d7e7b2;
-    --c-celery: #a0bf56;
-    --c-celery--dark: #95b645;
-    --c-celery--light: #aac668;
-    --c-fern-green: #507f44;
-    --c-fern-green--dark: #466e3b;
-    --c-fern-green--light: #5a904d;
-    --c-surf: #b8d9b9;
-    --c-surf--dark: #a7d0a9;
-    --c-surf--light: #c9e2c9;
-    --c-wild-rice: #eae88e;
-    --c-wild-rice--dark: #e6e478;
-    --c-wild-rice--light: #eeeca3;
-    --c-cream-can: #f4bb5f;
-    --c-cream-can--dark: #f2b147;
-    --c-cream-can--light: #f6c577;
-    --c-burnt-sienna: #ec774a;
-    --c-burnt-sienna--dark: #ea6633;
-    --c-burnt-sienna--light: #ee8861;
-    --c-golden-sand: #f4cc60;
-    --c-golden-sand--dark: #f6d478;
-    --c-golden-sand--light: #f8dc90;
-
-    --c-grey-0: #fff;
-    --c-grey-10: #eee;
-    --c-grey-20: #ccc;
-    --c-grey-30: #aaa;
-    --c-grey-40: #999;
-    --c-grey-50: #777;
-    --c-grey-60: #666;
-    --c-grey-70: #444;
-    --c-grey-80: #333;
-    --c-grey-90: #111;
-    --c-grey-100: #000;
-
-    --c-primary: var(--c-butterfly-bush);
-    --c-primary--dark: var(--c-butterfly-bush--dark);
-    --c-primary--light: var(--c-butterfly-bush--light);
-    --c-primary--lightest: #998EC7; /* passes wcag AAA with black foreground */
-
-    --c-secondary: var(--c-deep-blush);
-    --c-secondary--dark: var(--c-deep-blush--dark);
-    --c-secondary--light: var(--c-deep-blush--light);
-    --c-secondary--lightest: #e27fb1; /* passes wcag AAA with black foreground */
-
-    --c-tertiary: var(--c-cream-can);
-    --c-tertiary--dark: var(--c-cream-can--dark);
-    --c-tertiary--light: var(--c-cream-can--light);
-
-    --c-accent: var(--c-fruit-salad);
-    --c-accent--dark: var(--c-fruit-salad--dark);
-    --c-accent--light: var(--c-fruit-salad--light);
-    --c-accent--lightest: #59A670; /* passes wcag AAA with black foreground */
+    {%- for fontsize in site.data.fonts.fonts.sizes %}
+    --fs-{{ fontsize.name | downcase }}: {{ fontsize.value }};
+    --lh-{{ fontsize.name | downcase }}: {{ fontsize.leading }};
+    --ls-{{ fontsize.name | downcase }}: {{ fontsize.kerning }};
+    {%- endfor %}
   }
 }
 

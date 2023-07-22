@@ -1,6 +1,6 @@
-{% if site.fonts -%}
+{% if site.fonts.faces -%}
   {% capture fontstring %}
-  {%- for font in site.data.fonts.fonts -%}
+  {%- for font in site.data.fonts.fonts.faces -%}
     {% capture fontstack %}
       {{ font.name }}:ital,wght@
 
