@@ -1,12 +1,5 @@
 #!/bin/bash
 
-if [ "$1" ]; then
-  if [ "$1" != 'prod' ]; then
-    echo "Did you mean 'prod'?"
-    exit;
-  fi
-fi
-
 # install dependencies
 echo ""
 echo "Installing Dependencies"
@@ -25,17 +18,31 @@ if [ "$1" = 'prod' ]; then
   --destination dist/
   echo '---'
   exit
+elif [ "$1" = 'proxy' ]; then
+  echo ""
+  echo "Running Development Server & Proxy"
+  echo "---"
+  trap 'echo "Development Server Killed"; kill %1; kill %2; kill %3;' SIGINT SIGKILL SIGQUIT
+
+  npx netlify-cms-proxy-server \
+  & bundle exec jekyll serve \
+    --drafts \
+    --watch \
+    --config 'src/_config.yml,src/_config-development.yml' \
+    --source src/ \
+  & npx browser-sync start -w --proxy=http://localhost:4000 -f ./src --no-open
+else
+  echo ""
+  echo "Running Development Server"
+  echo "---"
+  trap 'echo "Development Server Killed"; kill %1; kill %2; kill %3;' SIGINT SIGKILL SIGQUIT
+
+  npx netlify-cms-proxy-server \
+  & bundle exec jekyll serve \
+    --drafts \
+    --watch \
+    --config 'src/_config.yml,src/_config-development.yml' \
+    --source src/ \
+    --destination dist \
+  & npx browser-sync start -w -f ./src --no-open -s dist
 fi
-
-echo ""
-echo "Running Development Server"
-echo "---"
-trap 'echo "Development Server Killed"; kill %1; kill %2; kill %3;' SIGINT SIGKILL SIGQUIT
-
-npx netlify-cms-proxy-server \
-& bundle exec jekyll serve \
-  --drafts \
-  --watch \
-  --config 'src/_config.yml,src/_config-development.yml' \
-  --source src/ \
-& npx browser-sync start -w --proxy=http://localhost:4000 -f ./src --no-open
