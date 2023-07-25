@@ -47,6 +47,10 @@
     justify-content: center;
   }
 
+  .contact-info dl {
+    margin-block-end: 0;
+  }
+
   .contact-info dt,
   .contact-info dd {
     align-self: center;

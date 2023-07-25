@@ -541,11 +541,18 @@
    */
   ul,
   ol {
-    padding-inline-start: var(--_list-padding, 1.125rem);
+    padding-inline: var(--_list-padding, 1.125rem) 0;
+    margin-block: 0;
+    margin-block-end: 1rem;
+  }
+
+  li {
+    line-height: 1.5;
   }
 
   dl {
-    margin: 0;
+    margin-inline: 0;
+    margin-block-end: 1rem;
   }
 
   dl.list--title-inline::after {
@@ -615,11 +622,7 @@
     font-size: var(--_paragraph-font-size);
     line-height: var(--_paragraph-line-height, var(--lh-base, 1.5));
     max-width: var(--_paragraph-max-width, 65ch);
-    margin: 0;
-  }
-
-  p + p {
-    margin-bottom: 1rem;
+    margin-block: 0 1rem;
   }
 
   p.lead {

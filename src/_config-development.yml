@@ -1,5 +1,5 @@
 # baseurl: http://localhost:3000
-unpublished: true
+unpublished: false
 
 page_css:
   style: compressed

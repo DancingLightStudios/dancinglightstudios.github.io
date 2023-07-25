@@ -121,4 +121,8 @@ defaults:
       path: 'admin/**/*.*'
     values:
       sitemap: false
-
+  - scope:
+      path: '_careers/**/*.md'
+    values:
+      layout: 'career'
+      class: career

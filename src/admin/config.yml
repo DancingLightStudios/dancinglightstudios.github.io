@@ -39,21 +39,42 @@ collections:
   - label: Careers
     name: careers
     folder: src/_careers
-    slug: "{{title}}"
+    slug: "{{ title }}"
     create: true
     fields:
-      - label: Layout
-        name: layout
-        widget: hidden
-        default: default
+      - label: Published
+        name: published
+        widget: boolean
+        required: false
+      - label: Date
+        name: date
+        widget: date
       - label: Title
         name: title
         widget: string
-      - label: Body
-        name: body
+      - label: Level
+        name: level
+        widget: string
+        required: false
+      - label: Salary Range
+        name: salary
+        widget: string
+      - label: Work Location
+        name: location
+        widget: string
+        required: false
+      - label: Opportunity
+        name: opportunity
         widget: markdown
         required: false
-
+      - label: Responsibilities
+        name: responsibilities
+        widget: markdown
+        required: false
+      - label: Requirements
+        name: requirements
+        widget: markdown
+        required: false
   # News Posts -----------------------------------------------------------------
   - label: "News"
     name: "post"
@@ -605,27 +626,25 @@ collections:
         name: page-careers
         file: src/_data/page-careers.yml
         fields:
-          - label: Layout
-            name: layout
-            widget: hidden
-            default: page
-          - label: Title
-            name: title
+          - label: Header
+            name: header
             widget: string
-          - label: Hero Image
-            name: hero-image
-            widget: object
-            collapsed: false
-            fields:
-              - label: Image
-                name: src
-                widget: image
-                required: false
-              - label: Alt text
-                name: alt
-                widget: string
-                required: false
+          - label: SubHeader
+            name: subheader
+            widget: string
           - label: Body
             name: body
             widget: markdown
             required: false
+          - label: No Posts
+            name: no_posts
+            widget: markdown
+          - label: Job Post About Us
+            name: job_post_about_us
+            widget: markdown
+          - label: Job Post Why Join
+            name: job_post_why_join
+            widget: markdown
+          - label: Job Post How To Apply
+            name: job_post_how_to_apply
+            widget: markdown
