@@ -1,26 +1,28 @@
 <fieldset>
   <p class="styleguide-label">Text</p>
-  <input />
+  <input value='lorem ipsum' />
+  <p class="styleguide-label">Text Placeholder</p>
+  <input placeholder="lorem ipsum" />
 </fieldset>
 
 <fieldset>
   <p class="styleguide-label">Email</p>
-  <input type="email" />
+  <input type="email" placeholder="email@example.com" />
 </fieldset>
 
 <fieldset>
   <p class="styleguide-label">URL</p>
-  <input type="url" />
+  <input type="url" placeholder="https://www.example.com" />
 </fieldset>
 
 <fieldset>
   <p class="styleguide-label">Number</p>
-  <input type="number" />
+  <input type="number" placeholder="12345" />
 </fieldset>
 
 <fieldset>
   <p class="styleguide-label">Tel</p>
-  <input type="tel" />
+  <input type="tel" placeholder="+1 (555) 555-5555" />
 </fieldset>
 
 <fieldset>
@@ -66,13 +68,16 @@
 
 <fieldset>
   <p class="styleguide-label">Textarea</p>
-  <textarea></textarea>
+  <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum ex a quam varius, feugiat aliquam dui viverra. Sed ante sapien, porta vitae venenatis nec, rhoncus sit amet mi. Ut cursus aliquet pretium. Quisque vehicula lectus velit, non posuere orci vehicula a. Pellentesque congue orci varius lacinia auctor. Nunc pharetra.</textarea>
 </fieldset>
 
 <fieldset>
   <p class="styleguide-label">Search</p>
   <div>
     <input type="search" placeholder="Enter keywords"/>
-    <button>Search</button>
+    <button class="button button--search">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M8 11a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"/><path fill-rule="evenodd" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 5a4 4 0 1 0 2 7l2 2a1 1 0 1 0 1-1l-2-2a4 4 0 0 0-3-6z" clip-rule="evenodd"/></svg>
+      Search
+    </button>
   </div>
 </fieldset>

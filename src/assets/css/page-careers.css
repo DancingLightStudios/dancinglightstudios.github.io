@@ -1,0 +1,90 @@
+.page-careers {
+  --_border-color: var(--c-grey-20);
+}
+
+.page-careers .hero {
+  --_background-color: white;
+}
+
+.page-careers .body {
+  --_background-color: white;
+}
+
+.page-careers header {
+  margin-inline: auto;
+  max-width: var(--_measure, 65ch);
+  padding-block-end: 0rem;
+}
+
+.page-careers article {
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--_vertical-separation, 1rem);
+  max-width: var(--_measure, 65ch);
+}
+
+.page-careers article p {
+  margin-block: 0;
+}
+
+.page-careers .not-hiring,
+.page-careers .listings {
+  border: 1px solid var(--_border-color, black);
+  border-inline: none;
+  padding-block: 1rem;
+}
+
+.page-careers .listing {
+  margin-block: 1rem;
+}
+
+.page-careers .listing a {
+  font-size: var(--_listing-title-font-size, 1.25rem);
+}
+
+.page-careers .position-details {
+  display: flex;
+  list-style: none;
+  padding-inline: 0;
+  gap: 1rem;
+}
+
+.page-careers .position-details li {
+  display: inline-block;
+}
+
+.page-careers .cta div {
+  text-align: center;
+}
+
+.page-careers .cta .button--apply {
+  --_button: var(--c-celery);
+  --_button--light: var(--c-celery--light);
+  --_button--dark: var(--c-celery--dark);
+}
+
+.page-careers .cta .button--linkedin {
+  --_button: #0077B5;
+  --_button--light: #5db0df;
+  --_button--dark: #3d8ac4;
+}
+
+@media screen and (min-width: 1024px) {
+  .page-careers {
+    --_vertical-separation: 1rem;
+    --_measure: 75ch;
+    --_horizontal_separation: 0.5rem;
+    --_label-color: var(--c-grey-60);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .page-careers {
+    --_vertical-separation: 1rem;
+    --_measure: 90ch;
+    --_horizontal_separation: 0.5rem;
+    --_label-color: var(--c-grey-60);
+  }
+}
+

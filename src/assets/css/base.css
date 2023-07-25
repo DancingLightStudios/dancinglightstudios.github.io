@@ -1,8 +1,7 @@
 ---
 ---
 @layer variables, reset, generic, element, component, page, utility
-
-@layer variables, reset, layout, component, decorator, utility;
+@layer variables, reset, layout, component, decorator, utility; /* todo refactor this out */
 
 @layer variables {
   body {
@@ -28,6 +27,7 @@
   }
 }
 
+/* todo replace with modern normalize */
 @layer reset {
   /*!
   * CSS Reset by Josh Comeau
@@ -117,11 +117,7 @@
 
 @layer layout {
   body {
-    padding-block-start: var(--_padding-block-start, 64px);
-  }
-
-  p:has(+ p) {
-    margin-block-end: 0.75rem;
+    padding-block-start: var(--_body-padding-block-start, 64px);
   }
 
   /*
@@ -297,7 +293,235 @@
   }
 }
 
-@layer components {
+@layer generic {
+  p:has(+ p) {
+    margin-block-end: 0.75rem;
+  }
+}
+
+/*
+ * Forms
+ * -----
+ */
+@layer element {
+  fieldset {
+    border: none;
+    padding: 0;
+  }
+
+  input,
+  textarea,
+  select {
+    -webkit-appearance: none;
+    border-radius: var(--_input-border-radius, 1rem);
+    border-style: var(--_input-border-style, solid);
+    border-width: var(--_input-border-width, 2px);
+    border-color: var(--_input-border-color, var(--c-grey-20, #bbb));
+    padding: var(--_input-padding-block, 0.25rem) var(--_input-padding-inline, 0.75rem);
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: var(--_input-border-width, 2px) var(--_input-border-style, solid) var(--_input-focus-color, var(--c-accent, blue));
+  }
+
+  input[type=checkbox],
+  input[type=radio] {
+    padding: 0.125rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  label:has(input[type=checkbox]),
+  label:has(input[type=radio]){
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--_input-spacing, 0.25rem);
+  }
+
+  *:has(> input[type=search] + button) {
+    display: inline-flex;
+    gap: var(--_input-spacing, 0.25rem);
+  }
+}
+
+/*
+ * Typography
+ * ----------
+ */
+@layer element {
+  /*
+   * Lists
+   * -----
+   */
+  ul,
+  ol {
+    padding-inline-start: var(--_list-padding, 1.125rem);
+  }
+
+  dl.list--title-inline::after {
+    content: "";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+
+  .list--title-inline dt,
+  .list--title-inline dd {
+    float: left;
+  }
+  .list--title-inline dt {
+    clear: both;
+    padding-right: var(--_list-inline-spacing, 0.5rem)
+  }
+
+  dl.list--inline {
+    display: inline-flex;
+    gap: var(--_list-inline-spacing, 1rem)
+  }
+
+  dl.list--inline dd {
+    margin-inline-start: var(--_list-inline-spacing-item-adjust, -0.5rem)
+  }
+
+  /*
+   * Quotes
+   * ------
+   */
+  blockquote {
+    border-inline-start-width: var(--_quote-decoration-width, 0.25rem);
+    border-inline-start-style: var(--_quote-decoration-style, solid);
+    border-inline-start-color: var(--_quote-decoration-color, var(--c-grey-20, #aaa));
+    padding-inline-start: var(--_quote-padding, 0.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: var(--_quote-spacing, 1rem);
+  }
+
+  blockquote p {
+    font-size: var(--_quote-font-size, var(--fs-big, 1.5rem));
+    line-height: var(--_quote-line-height, var(--fs-leading-big, 1.25))
+  }
+
+  blockquote cite {
+    font-size: var(--_quote-cite-font-size, var(--fs-base, 75rem));
+    font-style: var(--_quote-cite-font-style, normal);
+    color: var(--_quote-cite-color, var(--c-grey-80, #666));
+  }
+
+  /*
+   * Paragraph
+   * ---------
+   */
+  p {
+    font-size: var(--_paragraph-font-size);
+    max-width: var(--_paragraph-max-width, 65ch);
+  }
+
+  p + p {
+    margin-bottom: 1rem;
+  }
+
+  p.lead {
+    font-size: var(--_paragraph-font-size, var(--fs-big, 1.5rem));
+    line-height: var(--_paragraph-leading, var(--fs-leading-big, 1.25));
+  }
+
+  .columns {
+    column-count: var(--_column-count, 3);
+    column-fill: balance;
+    column-gap: var(--_column-gap, 1rem);
+  }
+
+  @media screen and (min-width: 1024px) {
+    p {
+      --_paragraph-max-width: 75ch;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    p {
+      --_paragraph-max-width: 85ch;
+    }
+  }
+
+  /*
+   * Headings
+   * --------
+   */
+  h1 {
+    font-size: var(--_heading-size, var(--fs-large, 2.25rem));
+    line-height: var(--_heading-line-height, var(--lh-large, 1.1));
+    font-weight: var(--_heading-weight, 500);
+  }
+
+  h2 {
+    font-size: var(--_heading-size, var(--fs-big, 1.5rem));
+    line-height: var(--_heading-line-height, var(--lh-big, 1.1));
+    font-weight: var(--_heading-weight, 500);
+  }
+
+  h3 {
+    font-size: var(--_heading-size, var(--fs-base, 1rem));
+    line-height: var(--_heading-line-height, var(--lh-base, 1.1));
+    font-weight: var(--_heading-weight, 600);
+  }
+
+  h1 a,
+  h2 a,
+  h3 a {
+    text-decoration: var(--_heading-decoration, none);
+  }
+
+  .heading__xl,
+  .heading__large,
+  .heading__big,
+  .heading__base,
+  .heading__small,
+  .heading__tiny,
+  .heading__micro {
+    font-size: var(--_heading-size, var(--fs-large, 2.25rem));
+    line-height: var(--_heading-line-height, var(--lh-large, 1.1));
+    font-weight: var(--_heading-weight, 500);
+  }
+
+  .heading__xl {
+    --_heading-size: var(--fs-xl);
+  }
+
+  .heading__large {
+    --_heading-size: var(--fs-large);
+  }
+
+  .heading__big {
+    --_heading-size: var(--fs-big);
+  }
+
+  .heading__base {
+    --_heading-size: var(--fs-base);
+    --_heading-weight: 600;
+  }
+
+  .heading__small {
+    --_heading-size: var(--fs-small);
+    --_heading-weight: 600;
+  }
+
+  .heading__tiny {
+    --_heading-size: var(--fs-tiny);
+    --_heading-weight: 600;
+  }
+
+  .heading__micro {
+    --_heading-size: var(--fs-micro);
+    --_heading-weight: 600;
+  }
+}
+
+@layer component {
   /*
    * Image Card
    */
@@ -388,27 +612,60 @@
   .button {
     background-color: var(--_button, #000f);
     box-shadow:
-    0 0.1rem 0.25rem var(--_background--dark, #0003),
-    inset 0 0.1rem 0.25rem var(--_button--light, #666f),
-    inset 0 -0.1rem 0.25rem var(--_button--dark, #333f);
+      0 0.1rem 0.25rem var(--_button-shadow, #0003),
+      inset 0 0.1rem 0.25rem var(--_button--light, #666f),
+      inset 0 -0.1rem 0.25rem var(--_button--dark, #333f);
     color: var(--_color, white);
-    padding: .75rem 1.5rem;
-    border-radius: 5rem;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 1rem;
+    padding: var(--_button-padding-block, .25rem) var(--_button-padding-inline, .75rem);
+    border-radius: var(--_button-radius, 5rem);
+    text-decoration: var(--_button-text-decoration, none);
+    border: none;
     user-select: none;
     text-transform: capitalize;
+    display: var(--_button-display, inline-flex);
+    align-items: center;
+    gap: var(--_button-icon-spacing, 0.5rem);
+    font-weight: 600;
+    font-size: var(--_button-font-size, var(--fs-base, 1rem));
+    text-align: center;
+  }
+
+  .button svg {
+    height: var(--_button-icon-size, 1rem);
+    fill: var(--_button-icon-color, white);
   }
 
   .button:hover {
     background-color: var(--_button--light, #333f);
-    text-decoration: underline;
+    text-decoration: var(--_button-text-decoration, underline);
   }
 
   .button:active {
     box-shadow:
-    inset 0 0.25rem 0.1rem var(--_button--dark, #000f);
+      inset 0 0.25rem 0.1rem var(--_button--dark, #000f);
+  }
+
+  .button--large {
+    --_button-padding-block: 0.5rem;
+    --_button-padding-inline: 1.5rem;
+    --_button-font-size: var(--fs-big);
+  }
+
+  .button--mini {
+    --_button-padding-block: 0.175rem;
+    --_button-padding-inline: 0.5rem;
+    --_button-font-size: var(--fs-small);
+  }
+
+  .button--small {
+    --_button-padding-block: 0.125rem;
+    --_button-padding-inline: 0.5rem;
+    --_button-font-size: var(--fs-tiny);
+  }
+
+  .button--block {
+    width: 100%;
+    --_button-display: flex;
   }
 }
 

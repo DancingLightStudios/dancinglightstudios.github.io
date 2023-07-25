@@ -4,6 +4,8 @@ class: styleguide
 permalink: styleguide/index.html
 published: false
 ---
+<link rel="stylesheet" href="/assets/css/page-styleguide.css">
+
 <div class="styleguide__table-of-contents">
   <a href="#jump-to-branding">Main Branding</a>
   <a href="#jump-to-colors-in-use">Colors</a>
@@ -23,13 +25,17 @@ published: false
 {% include_relative _styleguide/_section file='_styleguide/branding.html' %}
 {% include_relative _styleguide/_section file='_styleguide/colors-in-use.html' %}
 {% include_relative _styleguide/_section file='_styleguide/primary-typeface.html' %}
+{% comment %}
 {% include_relative _styleguide/_section file='_styleguide/complimentary-typeface.html' %}
 {% include_relative _styleguide/_section file='_styleguide/display-typeface.html' %}
+{% endcomment %}
 {% include_relative _styleguide/_section file='_styleguide/headings.html' %}
 {% include_relative _styleguide/_section file='_styleguide/paragraphs.html' %}
 {% include_relative _styleguide/_section file='_styleguide/quotations.html' %}
 {% include_relative _styleguide/_section file='_styleguide/lists.html' %}
 {% include_relative _styleguide/_section file='_styleguide/text-elements.html' %}
+{% comment %}
 {% include_relative _styleguide/_section file='_styleguide/tables.html' %}
+{% endcomment %}
 {% include_relative _styleguide/_section file='_styleguide/forms.html' %}
 {% include_relative _styleguide/_section file='_styleguide/buttons.html' %}

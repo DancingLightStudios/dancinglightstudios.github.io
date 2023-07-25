@@ -1,7 +1,7 @@
 fonts:
   sizes:
     - name: micro
-      value: 0.5rem
+      value: 0.675rem
       leading: 1.5
       kerning: 0
     - name: tiny
@@ -25,7 +25,7 @@ fonts:
       leading: 1
       kerning: -1px
     - name: xl
-      value: 3.75
+      value: 3.75rem
       leading: 1
       kerning: 0
 

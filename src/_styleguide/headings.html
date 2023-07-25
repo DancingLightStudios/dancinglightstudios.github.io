@@ -1,5 +1,5 @@
 <div>
-  {% assign headings = 'h1, h2, h3, h4, h5, h6' | split: ', ' %}
+  {% assign headings = 'h1, h2, h3' | split: ', ' %}
   {% for h in headings %}
   <div>
     <p class="styleguide-label">{{ h }}</p>
@@ -10,7 +10,8 @@
 </div>
 
 <div>
-  {% assign font-sizes = 'xx-display, x-display, display, xxx-large, xx-large, x-large, large, normal, small, x-small, xx-small' | split: ', ' %}
+  {% assign base = base | replace: 'headings', 'heading' | split: '/' | last %}
+  {% assign font-sizes = 'xl, large, big, base, small, tiny, micro' | split: ', ' %}
   {% for fs in font-sizes %}
   <div>
     <p class="styleguide-label">{{ fs }}</p>
