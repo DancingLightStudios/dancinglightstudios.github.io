@@ -27,6 +27,7 @@
 
 .page-career .position-details dt {
   color: var(--_label-color, var(--c-grey-60, #ddd));
+  width: 3rem;
 }
 
 .page-career .cta div {

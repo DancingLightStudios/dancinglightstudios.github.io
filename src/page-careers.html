@@ -3,10 +3,10 @@ layout: default
 permalink: /careers/index.html
 title: Careers
 class: careers
+css:
+  - page-careers.css
 ---
 {% assign page = site.data.page-careers %}
-
-<link rel="stylesheet" href="/assets/css/page-careers.css">
 
 {% capture hero %}
 <header class="header">
@@ -22,7 +22,7 @@ class: careers
 	</div>
 
 	<aside>
-		{% if site.careers.size < 1 %}
+		{% if site.careers.size == 0 %}
 		<section class="not-hiring">
 			<h2>We're not currently hiring, but&hellip;</h2>
 
