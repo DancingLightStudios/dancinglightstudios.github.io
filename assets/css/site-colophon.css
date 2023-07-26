@@ -1,34 +1,30 @@
 @layer component {
-  .colophon .container--x {
-    position: relative;
+  .colophon {
+    --_background-color: var(--c-accent--lightest);
   }
 
-  .colophon .container--x-wrapper {
-    padding-block-start: var(--_padding-block-start, 0);
-    padding-block-end: var(--_padding-block-end, 3rem);
+  .colophon a {
+    color: white;
   }
 
-  @media screen and (min-width: 768px) {
-    .colophon .container--x-wrapper {
-      --_padding-block-end: 2rem;
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    .colophon .container--x-wrapper {
-      --_padding-block-end: 1rem;
-    }
-  }
-
-  @media screen and (min-width: 1920px) {
-    .colophon .container--x-wrapper {
-      --_padding-block-end: 0rem;
-    }
-  }
-
-
-  .colophon .container--y {
+  .colophon .container-vertical {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .colophon .container--wrapper {
+    padding-block: 3rem 3rem;
+  }
+
+  @media screen and (min-width: 1365px) {
+    .colophon .container--wrapper {
+      padding-block: 3rem 0rem;
+    }
+  }
+
+  .colophon .content {
+    max-width: max-content;
   }
 
   .colophon .content {
@@ -51,25 +47,13 @@
     justify-content: center;
   }
 
+  .contact-info dl {
+    margin-block-end: 0;
+  }
+
   .contact-info dt,
   .contact-info dd {
     align-self: center;
     display: flex;
-  }
-
-  .contact-info svg {
-    height: 2rem;
-    width: 2rem;
-    margin-right: 0.5rem;
-    display: none;
-  }
-
-  .colophon.container--x {
-    --_background-color: var(--c-accent--lightest);
-  }
-
-  .colophon a {
-    color: white;
-    /* font-weight: bold; */
   }
 }

@@ -1,7 +1,7 @@
 .page-lbe .hero {
-  --_background-color: white;
+  --_background-color: var(--c-secondary--lightest);
 }
 
 .page-lbe .body {
-  --_background-color: var(--c-secondary--lightest);
+  --_background-color: white;
 }

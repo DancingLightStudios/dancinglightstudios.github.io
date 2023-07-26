@@ -1,7 +1,9 @@
-.page-pl .hero {
-  --_background-color: white;
-}
+@layer page {
+  .hero {
+    --_background-color: var(--c-primary--lightest);
+  }
 
-.page-pl .body {
-  --_background-color: var(--c-primary--lightest);
+  .body {
+    --_background-color: white;
+  }
 }

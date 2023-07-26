@@ -1,0 +1,23 @@
+.styleguide-section {
+  width: 100%;
+  max-width: 1024px;
+  margin-inline: auto;
+  margin-block-end: 4rem;
+}
+
+.primary-branding {
+  max-height: 40rem;
+  display: flex;
+  justify-content: center;
+}
+
+.secondary-branding {
+  max-height: 15rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.secondary-branding img {
+  flex-basis: 25%;
+  max-width: 25%;
+}
