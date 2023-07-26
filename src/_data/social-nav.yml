@@ -1,21 +1,21 @@
 items:
-  - text: Facebook
-    url: "#"
-    icon: facebook
-    show-text: false
-  - text: Instagram
-    url: "#"
-    icon: instagram
-    show-text: false
-  - text: Twitter
-    url: "#"
-    icon: twitter
-    show-text: false
-  - text: Github
-    url: "#"
-    icon: github
-    show-text: false
-  - text: Youtube
-    url: "#"
-    icon: youtube
-    show-text: false
+  # - text: Facebook
+  #   url: "#"
+  #   icon: facebook
+  #   show-text: false
+  # - text: Instagram
+  #   url: "#"
+  #   icon: instagram
+  #   show-text: false
+  # - text: Twitter
+  #   url: "#"
+  #   icon: twitter
+  #   show-text: false
+  # - text: Github
+  #   url: "#"
+  #   icon: github
+  #   show-text: false
+  # - text: Youtube
+  #   url: "#"
+  #   icon: youtube
+  #   show-text: false
