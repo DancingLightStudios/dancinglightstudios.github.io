@@ -1,7 +1,6 @@
 ---
 ---
-@layer variables, reset, generic, element, component, page, utility
-@layer variables, reset, layout, component, decorator, utility; /* todo refactor this out */
+@layer variables, reset, generic, element, component, page, utility;
 
 @layer variables {
   body {
@@ -27,76 +26,294 @@
   }
 }
 
-/* todo replace with modern normalize */
 @layer reset {
-  /*!
-  * CSS Reset by Josh Comeau
-  * https://www.joshwcomeau.com/css/custom-css-reset/#introduction
-  */
+  /*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
   /*
-    Use a more-intuitive box-sizing model.
+  Document
+  ========
   */
-  *, *::before, *::after {
+
+  /**
+  Apply a more natural box layout model to all elements (opinionated), but allowing components to change,
+  compare https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+  and https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+  */
+
+  html {
     box-sizing: border-box;
   }
 
-  /*
-    Remove default margin
-  */
-  * {
-    margin: 0;
+  *::before,
+  *::after {
+    box-sizing: inherit;
   }
 
-  /*
-    Force scrollbars
-  */
   html {
-    min-height: 100dvh;
-    overflow-y: scroll;
+    /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
+    font-family:
+      Monserrat,
+      system-ui,
+      'Segoe UI',
+      Roboto,
+      Helvetica,
+      Arial,
+      sans-serif,
+      'Apple Color Emoji',
+      'Segoe UI Emoji';
+    line-height: 1.15; /* 1. Correct the line height in all browsers. */
+    -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+    -moz-tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
+    tab-size: 4; /* 3 */
   }
 
   /*
-    Add accessible line-height
-    Improve text rendering
+  Sections
+  ========
   */
+
   body {
-    font-size: 1rem;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    font-variant-ligatures: common-ligatures;
-    font-family: Monserrat, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0; /* Remove the margin in all browsers. */
   }
 
   /*
-    Improve media defaults
+  Grouping content
+  ================
   */
-  img, picture, video, canvas, svg {
-    display: block;
+
+  /**
+  1. Add the correct height in Firefox.
+  2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+  */
+
+  hr {
+    height: 0; /* 1 */
+    color: inherit; /* 2 */
+  }
+
+  /*
+  Text-level semantics
+  ====================
+  */
+
+  /**
+  Add the correct text decoration in Chrome, Edge, and Safari.
+  */
+
+  abbr[title] {
+    text-decoration: underline dotted;
+  }
+
+  /**
+  Add the correct font weight in Edge and Safari.
+  */
+
+  b,
+  strong {
+    font-weight: bolder;
+  }
+
+  /**
+  1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+  2. Correct the odd 'em' font sizing in all browsers.
+  */
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family:
+      ui-monospace,
+      SFMono-Regular,
+      Consolas,
+      'Liberation Mono',
+      Menlo,
+      monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+
+  /**
+  Add the correct font size in all browsers.
+  */
+
+  small {
+    font-size: 80%;
+  }
+
+  /**
+  Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+  */
+
+  sub,
+  sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  /*
+  Tabular data
+  ============
+  */
+
+  /**
+  1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+  2. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+  */
+
+  table {
+    text-indent: 0; /* 1 */
+    border-color: inherit; /* 2 */
+  }
+
+  /*
+  Forms
+  =====
+  */
+
+  /**
+  1. Change the font styles in all browsers.
+  2. Remove the margin in Firefox and Safari.
+  */
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+  }
+
+  /**
+  Remove the inheritance of text transform in Edge and Firefox.
+  */
+
+  button,
+  select {
+    text-transform: none;
+  }
+
+  /**
+  Correct the inability to style clickable types in iOS and Safari.
+  */
+
+  button,
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
+    -webkit-appearance: button;
+  }
+
+  /**
+  Remove the inner border and padding in Firefox.
+  */
+
+  ::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  /**
+  Restore the focus styles unset by the previous rule.
+  */
+
+  :-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+
+  /**
+  Remove the additional ':invalid' styles in Firefox.
+  See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+  */
+
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  /**
+  Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+  */
+
+  legend {
+    padding: 0;
+  }
+
+  /**
+  Add the correct vertical alignment in Chrome and Firefox.
+  */
+
+  progress {
+    vertical-align: baseline;
+  }
+
+  /**
+  Correct the cursor style of increment and decrement buttons in Safari.
+  */
+
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  /**
+  1. Correct the odd appearance in Chrome and Safari.
+  2. Correct the outline style in Safari.
+  */
+
+  [type='search'] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+  }
+
+  /**
+  Remove the inner padding in Chrome and Safari on macOS.
+  */
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  /**
+  1. Correct the inability to style clickable types in iOS and Safari.
+  2. Change font properties to 'inherit' in Safari.
+  */
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+
+  /*
+  Interactive
+  ===========
+  */
+
+  /*
+  Add the correct display in Chrome and Safari.
+  */
+
+  summary {
+    display: list-item;
+  }
+
+  /*
+   * Reset image widths
+   */
+  img {
+    min-width: 0;
     max-width: 100%;
-  }
-
-  /*
-    Remove built-in form typography styles
-  */
-  input, button, textarea, select {
-    font: inherit;
-  }
-
-  /*
-    Avoid text overflows
-  */
-  p, h1, h2, h3, h4, h5, h6 {
-    font-weight: normal;
-    overflow-wrap: break-word;
-  }
-
-  /*
-    Create a root stacking context
-  */
-  #root, #__next {
-    isolation: isolate;
   }
 }
 
@@ -115,45 +332,26 @@
   }
 }
 
-@layer layout {
-  body {
-    padding-block-start: var(--_body-padding-block-start, 64px);
-  }
-
+@layer element {
   /*
    * Container
    */
-  .container--x {
-    padding-block: 0;
+  .container--horizontal {
+
   }
 
-  .container--x-wrapper {
-    padding-block: var(--_padding-y, 2rem);
-  }
-
-  .container--y {
-    padding-inline: var(--_padding-x, 1rem);
+  .container--vertical {
     max-width: var(--_max-x, 80rem);
-    margin: auto;
-  }
-
-  @media screen and (min-width: 768px) {
-    .container--y {
-      padding-inline: var(--_padding-x, 2rem);
-    }
-  }
-
-  @media screen and (min-width: 1366px) {
-    .container--y {
-      --_padding-x: 0;
-    }
+    margin-inline: auto;
+    padding-inline: 1rem;
   }
 
   /*
    * Separator
    */
-  .container--x {
-    position: relative; /* positioning requirement for the separators to not float */
+  .container--horizontal {
+    /* positioning requirement for the separators to not float */
+    position: relative;
   }
 
   [class*=separator] {
@@ -166,72 +364,57 @@
     /* content container background */
     background-color: var(--_background-color, silver);
     color: unset;
+    padding-block-start: 1rem;
+    padding-block-end: 1rem;
   }
 
   .separator--block-start {
-    margin-block-end: var(--_margin-block-end, -5px); /* fross hack to get rid of lines */
+    /* gross hack to get rid of lines */
+    margin-block-start: 0px;
+    margin-block-end: var(--_margin-block-end, -5px);
   }
 
   .separator--block-end {
     height: 0;
-    margin-block-start: var(--_margin-block-start, -5px); /* gross hack to get rid of lines */
   }
 
   /*
    * Page Header
    */
   .header {
-    padding-block: 4rem;
+    padding-block: var(--_header-padding-block-start, 7rem) var(--_header-padding-block-end, 2rem);
   }
 
   .header__heading {
-    font-size: var(--_fs-heading, var(--fs-large));
-    line-height: var(--_lh-heading, var(--lh-large));
-    color: var(--_color-heading, black);
-    margin-block-end: var(--_gap, 0.75rem);
+    /* font-size: var(--_fs-heading, var(--fs-large)); */
+    /* line-height: var(--_lh-heading, var(--lh-large)); */
+    /* color: var(--_color-heading, black); */
+    /* margin-block-end: var(--_gap, 0.75rem); */
   }
 
   .header__subheading {
-    font-size: var(--_fs-subheading, var(--fs-base));
-    line-height: var(--_lh-subheading, var(--lh-base));
-    color: var(--_color-subheading, black);
-    margin-block-end: 0;
+    /* font-size: var(--_fs-subheading, var(--fs-base)); */
+    /* line-height: var(--_lh-subheading, var(--lh-base)); */
+    /* color: var(--_color-subheading, black); */
+    /* margin-block-end: 0; */
   }
 
   @media screen and (min-width: 768px) {
     .header {
-      padding-block: 6rem;
+      --_header-padding-block-start: 10rem;
+      --_header-padding-block-end: 4rem;
     }
   }
 
   @media screen and (min-width: 1024px) {
     .header {
-      padding-block: 10rem;
+      /* padding-block: 10rem; */
     }
   }
 
   @media screen and (min-width: 1366px) {
     .header {
-      padding-block: 8rem;
-    }
-  }
-
-  /*
-   * Content
-   */
-  .content {
-    padding-block: 2rem;
-  }
-
-  @media screen and (min-width: 1024px) {
-    .header {
-      padding-block: 4rem;
-    }
-  }
-
-  @media screen and (min-width: 1366px) {
-    .header {
-      padding-block: 8rem;
+      /* padding-block: 8rem; */
     }
   }
 
@@ -361,6 +544,10 @@
     padding-inline-start: var(--_list-padding, 1.125rem);
   }
 
+  dl {
+    margin: 0;
+  }
+
   dl.list--title-inline::after {
     content: "";
     visibility: hidden;
@@ -395,21 +582,29 @@
     border-inline-start-width: var(--_quote-decoration-width, 0.25rem);
     border-inline-start-style: var(--_quote-decoration-style, solid);
     border-inline-start-color: var(--_quote-decoration-color, var(--c-grey-20, #aaa));
-    padding-inline-start: var(--_quote-padding, 0.5rem);
+    padding-inline-start: var(--_quote-spacing, 0.5rem);
     display: flex;
     flex-direction: column;
     gap: var(--_quote-spacing, 1rem);
+    margin: 0;
   }
 
   blockquote p {
     font-size: var(--_quote-font-size, var(--fs-big, 1.5rem));
-    line-height: var(--_quote-line-height, var(--fs-leading-big, 1.25))
+    line-height: var(--_quote-line-height, 1.25);
+    font-weight: var(--_quote-font-weight, 300);
   }
 
   blockquote cite {
-    font-size: var(--_quote-cite-font-size, var(--fs-base, 75rem));
+    font-size: var(--_quote-cite-font-size, var(--fs-base, 1rem));
     font-style: var(--_quote-cite-font-style, normal);
     color: var(--_quote-cite-color, var(--c-grey-80, #666));
+  }
+
+  @media screen and (min-width: 1024px) {
+    blockquote {
+      --_quote-spacing: 2rem;
+    }
   }
 
   /*
@@ -418,7 +613,9 @@
    */
   p {
     font-size: var(--_paragraph-font-size);
+    line-height: var(--_paragraph-line-height, var(--lh-base, 1.5));
     max-width: var(--_paragraph-max-width, 65ch);
+    margin: 0;
   }
 
   p + p {
@@ -453,21 +650,27 @@
    * --------
    */
   h1 {
+    display: inline-block;
     font-size: var(--_heading-size, var(--fs-large, 2.25rem));
     line-height: var(--_heading-line-height, var(--lh-large, 1.1));
     font-weight: var(--_heading-weight, 500);
+    margin-block: 0 0.5rem;
   }
 
   h2 {
+    display: inline-block;
     font-size: var(--_heading-size, var(--fs-big, 1.5rem));
     line-height: var(--_heading-line-height, var(--lh-big, 1.1));
     font-weight: var(--_heading-weight, 500);
+    margin-block: 0 0.5rem;
   }
 
   h3 {
+    display: inline-block;
     font-size: var(--_heading-size, var(--fs-base, 1rem));
     line-height: var(--_heading-line-height, var(--lh-base, 1.1));
     font-weight: var(--_heading-weight, 600);
+    margin-block: 0 0.5rem;
   }
 
   h1 a,
@@ -539,6 +742,8 @@
   .content-card {
     flex-grow: 1;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .content-card__heading {
@@ -549,23 +754,30 @@
   }
 
   .content-card__content {
-    margin-block-end: 0.75rem;
+    margin-block-end: 1rem;
   }
 
   .content-card__subheading {
     font-size: var(--fs-big);
     line-height: var(--lh-big);
+    margin-bottom: 1rem;
+  }
+
+  .content-cart__list {
+
   }
 
   .content-card__list-wrapper {
     position: relative;
     padding-inline-start: 2.5rem;
     margin-bottom: 1rem;
+    line-height: 1.5;
   }
 
   .content-card__list-title {
     display: inline;
     font-style: italic;
+    font-weight: 500;
   }
 
   .content-card__list-title svg {
@@ -577,6 +789,7 @@
 
   .content-card__list-body {
     display: inline;
+    margin-inline-start: 0;
   }
 
   /*
@@ -616,7 +829,7 @@
       inset 0 0.1rem 0.25rem var(--_button--light, #666f),
       inset 0 -0.1rem 0.25rem var(--_button--dark, #333f);
     color: var(--_color, white);
-    padding: var(--_button-padding-block, .25rem) var(--_button-padding-inline, .75rem);
+    padding: var(--_button-padding-block, 0.75rem) var(--_button-padding-inline, 1.5rem);
     border-radius: var(--_button-radius, 5rem);
     text-decoration: var(--_button-text-decoration, none);
     border: none;

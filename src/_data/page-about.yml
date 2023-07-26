@@ -1,7 +1,8 @@
-header: About
+header: About Dancing Light Studios
 subheader: >-
   Empowering the Future: Education and Entertainment Reimagined.
-
+permalink: /about/index.html
+body: >-
   Our vision at Dancing Light Studios is to create a world where the
   boundaries between education and entertainment are blurred, and advanced
   technology is accessible to all. We envision a future where every
@@ -10,7 +11,6 @@ subheader: >-
   boundaries of AR, VR, and MR technologies, we strive to create
   unforgettable experiences that inspire growth, spark creativity, and
   empower the next generation of learners and innovators.
-permalink: /about/index.html
 values:
   - title: Empathetic Innovation
     body: >-

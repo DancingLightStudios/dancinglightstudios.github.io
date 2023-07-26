@@ -49,11 +49,11 @@
       position: absolute;
     }
 
-    .site-nav .container--x {
+    .site-nav .container--horizontal {
       padding-block: 1rem;
     }
 
-    .site-nav .container--y {
+    .site-nav .container--vertical {
       padding-inline: 1rem;
     }
   }

@@ -1,18 +1,16 @@
 <link rel="stylesheet" href="{{ '/assets/css/site-copyright.css' | prepend: site.baseurl }}">
 
-<div class="site-copyright container--x">
-  <div class="site-copyright__wrapper wrapper container--x-wrapper">
-    <div class="site-copyright__container container container--y">
-      <p class="site-copyright__text">
-        {% include fragment/html-copyright.html %}
-        <a href="/privacy">Privacy Policy</a>
-      </p>
+{% capture copyright %}
+  <p class="site-copyright__text">
+    {% include fragment/html-copyright.html %}
+    <a href="/privacy">Privacy Policy</a>
+  </p>
 
-      {% if site.data.social-nav.items.size > 0 %}
-      <div class="site-copyright__nav">
-        {% include components/nav.html items=site.data.social-nav.items recurse=true %}
-      </div>
-      {% endif %}
-    </div>
+  {% if site.data.social-nav.items.size > 0 %}
+  <div class="site-copyright__nav">
+    {% include components/nav.html items=site.data.social-nav.items recurse=true %}
   </div>
-</div>
+  {% endif %}
+{% endcapture %}
+
+{% include components/separator.html content=copyright start=false end=false class='site-copyright' %}

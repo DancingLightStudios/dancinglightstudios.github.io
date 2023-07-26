@@ -2,47 +2,30 @@
 layout: default
 permalink: /physical-literacy/index.html
 title: Physical Literacy
-# class: pl
-# css:
-# - page-pl.css
+class: pl
+css:
+  - page-pl.css
 js:
   - masonry.js
 ---
 {% assign page = site.data.page-pl %}
 
-<div class="hero container--x">
-	<div class="separator--wrapper">
-		<div class="container--y">
-			<header class="header">
-				<h1 class="header__heading">{{ page.header }}</h1>
-				<p class="header__subheading">{{ page.subheader }}</p>
-			</header>
-		</div>
-	</div>
+{% capture hero %}
+<header class="header">
+	<h1 class="header__heading">{{ page.header }}</h1>
+	<p class="header__subheading">{{ page.subheader }}</p>
+</header>
+{% endcapture %}
 
-	<div class="separator--block-end">
-		{% include components/corner-left-bottom.svg %}
-	</div>
+{% capture body %}
+<div class="content masonry-stack">
+	{{ page.body | markdownify }}
+
+	{% for image in page.images %}
+	<img class="image--card" src="{{ image.src | prepend: site.baseurl }}" alt="{{ image.alt }}">
+	{% endfor %}
 </div>
+{% endcapture %}
 
-<div class="body container--x">
-	<div class="separator--block-start">
-		{% include components/corner-left-top.svg %}
-	</div>
-
-	<div class="separator--wrapper">
-		<div class="container--y">
-			<div class="content masonry-stack">
-				{{ page.body | markdownify }}
-
-				{% for image in page.images %}
-				<img class="image--card" src="{{ image.src | prepend: site.baseurl }}" alt="{{ image.alt }}">
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-
-	<div class="separator--block-end">
-		{% include components/corner-right-bottom.svg %}
-	</div>
-</div>
+{% include components/separator.html content=hero start=false end=true class='hero' %}
+{% include components/separator.html content=body start=true end=true class='body' %}

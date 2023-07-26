@@ -573,8 +573,10 @@ collections:
             widget: string
           - label: SubHeader
             name: subheader
+            widget: string
+          - label: Body
+            name: body
             widget: markdown
-
           - label: Values
             name: values
             widget: list
