@@ -455,6 +455,7 @@
   }
 
   .about .button {
+    align-self: center;
     --_background--dark: var(--c-grey-30);
     --_button: var(--c-deep-blush);
     --_button--light: var(--c-deep-blush--light);
