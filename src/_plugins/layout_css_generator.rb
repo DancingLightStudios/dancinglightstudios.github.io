@@ -30,16 +30,7 @@ module Jekyll
     end
   end
 
-  # Concatenates, hashes a page's css
-  # ---
-  # css:
-  #   - one.css
-  #   - two.css
-  # ---
-  # will combine one.css and two.css (in order), hash the resulting file contents
-  # and replace the property before rendering stage
-  # {{ page.css }} will be relative url to the hashed file
-  class PageCssGenerator < Generator
+  class LayoutCssGenerator < Generator
     def generate(site)
       config = site.config
       @asset_path = config['page_css']['path']
@@ -49,17 +40,19 @@ module Jekyll
 
       @source_path = File.join(*[site.source, @asset_path].compact)
 
-      # Pages with the frontmatter css
-      pages = site.pages.select { |page| page.data.include? 'css' }
+      layouts = site.layouts
 
-      for page in pages do
-        files = page.data['css']
+      for name, layout in layouts do
+        files = layout.data['css']
         next if files.nil?
 
         css_output = ''
 
         for file in files do
-          css_output << File.read(@source_path + file)
+          file_contents = File.read(@source_path + file)
+          tmp_page = Jekyll::PageWithoutAFile.new(site, nil, @asset_path, name + '.css')
+          tmp_page.content = file_contents
+          css_output << Jekyll::Renderer.new(site, tmp_page).run()
         end
 
         # css minification
@@ -72,7 +65,7 @@ module Jekyll
         hashed_file_name = Digest::MD5.hexdigest(css_output) + '.css'
 
         file = Jekyll::GeneratedStaticFile.new(site, @asset_path, hashed_file_name)
-        page.data['css'] = file.url
+        layout.data['css'] = file.url
 
         # skip file for output if already in the list
         return if site.static_files.find { |x| x.name == file.name }
@@ -85,18 +78,3 @@ module Jekyll
     end
   end
 end
-
-# Compress css files with frontmatter headers
-Jekyll::Hooks.register :pages, :post_render do |page|
-  # only operate on css files
-  if page.ext == '.css' then
-    config = page.site.config
-    @asset_style = config['page_css']['style'] || false
-
-    # css minification
-    converter_config = { 'sass' => { 'style' => @asset_style } }
-    css_converter = Jekyll::Converters::Scss.new(converter_config)
-    page.output = css_converter.convert(page.output)
-  end
-end
-

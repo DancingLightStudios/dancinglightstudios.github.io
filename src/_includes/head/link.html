@@ -1,7 +1,16 @@
 {% assign config = site.data.constants-site %}
 
+{% comment %}
 <link rel="stylesheet" href="{{ '/assets/css/base.css' | prepend: site.baseurl }}">
+{% endcomment %}
+
+{% if layout.css %}
+<link rel="stylesheet" href="{{ layout.css | prepend: '/' | prepend: site.baseurl }}">
+{% endif %}
+
+{% if page.css %}
 <link rel="stylesheet" href="{{ page.css | prepend: '/' | prepend: site.baseurl }}">
+{% endif %}
 
 {% if site.ownership %}
 <link rel="me" href="{{ site.ownership }}">
