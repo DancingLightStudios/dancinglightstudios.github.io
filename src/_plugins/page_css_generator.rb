@@ -52,6 +52,13 @@ module Jekyll
       # Pages with the frontmatter css
       pages = site.pages.select { |page| page.data.include? 'css' }
 
+      # collections with the frontmatter css
+      for type, collection in site.collections do
+        for doc in collection.docs do
+          pages << doc if doc.data.include? 'css'
+        end
+      end
+
       for page in pages do
         files = page.data['css']
         next if files.nil?

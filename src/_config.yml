@@ -126,3 +126,5 @@ defaults:
     values:
       layout: 'career'
       class: career
+      css:
+        - page-career.css
