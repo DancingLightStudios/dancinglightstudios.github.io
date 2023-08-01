@@ -1,13 +1,30 @@
 hero-title: Everything is<br>about to change.
+hero-leader: Embark on a journey where innovation ignites imagination.
 pl-title: Physical Literacy
+pl-leader: Stimulating activity beyond the playground
 pl-text: Unlocking the power of movement, we merge technology and physical
   education, creating a new world of active learning.
+pl-points:
+  - title: Empowering Movement Education.
+    body: Elevate physical literacy with interactive, tech-fueled experiences.
+    icon: lightning-bolt
+  - title: " Inclusivity in Motion."
+    body: Tailoring accessibility for all, breaking barriers and building bridges
+      for all learners.
+    icon: people
+  - title: Transforming the Landscape.
+    body: Unleash the future of physical literacy with boundary-pushing immersive
+      environments.
+    icon: light-bulb
 pl-image:
-  src: /images/uploads/gregdaynes_a_gynasium_of_kids_playing_a_game_of_floor_is_lava_b34fa2a7-feaf-4780-9042-9950a11b16ff.jpg
-  alt: pl image
+  src: /images/uploads/an_artists_rendition_of_kids_playing_a_game_of_floor_is_lava.webp
+  alt: Kids playing "the floor is lava" - The lava is lit from beneath using
+    yellow/orange LEDs, covered in rubber and texture to give the appearance of
+    magma flows.
 pl-link:
   text: Learn more about Physical Literacy
   href: /physical-literacy
+lbe-title: Location Based Entertainment
 lbe-leader: Wow beyond screens.
 lbe-text: Forge captivating landscapes, blending innovation with sensory wonder.
 lbe-points:
@@ -22,14 +39,20 @@ lbe-points:
       emotion.
     icon: light-bulb
 lbe-image:
-  src: /images/uploads/gregdaynes_a_small_group_of_people_on_a_field_trip_standing_in__03a1300c-36b4-467b-a563-684fec6e4b52.jpg
-  alt: lbe image
+  src: /images/uploads/a_small_group_of_kids_on_a_field_trip_at_immersive_egyption_display.webp
+  alt: 4 Kids of varying ages stand in an immersive exhibit with real sand floors,
+    surrounded by a digital screen that has a holographic representation of a
+    pyramid.
 lbe-link:
   text: Find out about Location Based Entertainment
   href: /location-based-entertainment
+about-title: Dancing Light Studios
 about-leader: "Empowering the Future: Education and Entertainment Reimagined."
 about-text: >-
-  At Dancing Light Studios, we're painting the horizon with dreams. Envisage a tapestry where education doesn’t just inform but enthrals, where entertainment doesn’t just amuse but enlightens. Here, advanced technology isn’t a privilege; it’s an inheritance for all.
+  At Dancing Light Studios, we're painting the horizon with dreams. Envisage a
+  tapestry where education doesn’t just inform but enthrals, where entertainment
+  doesn’t just amuse but enlightens. Here, advanced technology isn’t a
+  privilege; it’s an inheritance for all.
 
 
   Picture classrooms and venues as stages for boundless imaginations, with walls that talk, floors that pulsate, and air that sings the tales of wonders. We're fashioning a symphony of Augmented Reality (AR), Virtual Reality (VR), and Mixed Reality (MR), designed to not just be seen or heard but felt.
@@ -39,40 +62,28 @@ about-text: >-
 hero-primary-button:
   key: Get Started
   value: "#"
-hero-leader: Embark on a journey where innovation ignites imagination.
-pl-leader: Stimulating activity beyond the playground
-pl-points:
-  - title: Empowering Movement Education.
-    body: Elevate physical literacy with interactive, tech-fueled experiences.
-    icon: lightning-bolt
-  - title: " Inclusivity in Motion."
-    body: Tailoring accessibility for all, breaking barriers and building bridges
-      for all learners.
-    icon: people
-  - title: Transforming the Landscape.
-    body: Unleash the future of physical literacy with boundary-pushing immersive
-      environments.
-    icon: light-bulb
 hero-body: Dancing Light Studios is poised to revolutionize the realms of
   education and entertainment through awe-inspiring AR, VR, and MR experiences.
   Our technology is driven by a passion to empower, engage, and enlighten. The
   canvas of possibilities is endless, and we’re painting it with pixels of
   progress. A new era beckons, and Dancing Light Studios is leading the way. Be
   part of the transformation – because everything is about to change.
-lbe-title: Location Based Entertainment
-about-title: Dancing Light Studios
 about-images:
-  - alt: Hello 1
-    src: /images/uploads/gregdaynes_extremely_detailed_exihibition_hall_for_a_trade_show_abeeb4ca-8913-4e1d-9af6-8471f51be851.jpg
-  - alt: Hello 2
-    src: /images/uploads/gregdaynes_extremely_detailed_3_people_wearing_vr_headsets_stan_c032d290-756e-4b3f-a174-984c0cb79aab.jpg
-  - alt: Hello 3
-    src: /images/uploads/gregdaynes_museum_exhibit_of_wild_animals_in_augmented_reality_8df01a76-5683-4eac-a3a6-f64a575771f5.jpg
-  - alt: Hello 4
-    src: /images/uploads/gregdaynes_museum_exhibit_of_an_pirate_ship_with_people_looking_7a5e34c1-c9e2-40db-a3bd-7f964b7e5677.jpg
-hero-secondary-button:
-  key: Live Demo
-  value: "#"
+  - alt: A trade show meetup area surrounded by translucent coloured glass panels to
+      give the feeling of being in a hologram.
+    src: /images/uploads/trade_show_meetup_with_pannelled_glass.webp
+  - alt: Two people experiencing a stylistic forest animal scene in VR. The
+      Rendering is imposed around them to provide a representation of what the
+      VR experience is.
+    src: /images/uploads/a_pair_of_people_witnessing_a_scene_in_vr.webp
+  - alt: 2 people in a dimly lit taxidermy exhibit of a lion, using a tablet to see
+      more details about the exhibit through short film on the lion kingdom.
+    src: /images/uploads/extended_information_on_tablet_about_a_lion.webp
+  - alt: Two youths using AR headsets to bring a boat exhibit to life.
+    src: /images/uploads/two_people_using_ar_to_see_a_boat.webp
 about-link:
   text: More about Dancing Light Studios
   href: /about
+hero-secondary-button:
+  key: Live Demo
+  value: "#"

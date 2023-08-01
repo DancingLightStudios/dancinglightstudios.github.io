@@ -20,6 +20,8 @@ body: >-
 
   At our core, we believe in pushing the boundaries of what is possible with projection-mapped technology, and we take pride in helping our clients bring their vision to life.
 images:
-  # - src: /images/uploads/gregdaynes_a_small_group_of_people_on_a_field_trip_standing_in__eb2bf01e-0a40-4a1e-8e3e-aab0ab0fc8f7.jpg
-  - src: /images/uploads/gregdaynes_people_playing_wallball_with_a_holographic_ball_4743c49d-22ea-4d73-8ec7-77411763a765.jpg
-  - src: /images/uploads/gregdaynes_extremely_detailed_3_people_standing_in_front_of_a_s_01c242f6-dc41-4865-a1a4-aa255b9b9909.jpg
+  - src: /images/uploads/peple_standing_in_a_mapped_room.webp
+    alt: "Three people standing in a projection mapped room. "
+  - src: /images/uploads/group_standing_infront_of_holographic_display_of_cats.webp
+    alt: Three youths standing and looking at a large glass screen with a projection
+      of large cats.
