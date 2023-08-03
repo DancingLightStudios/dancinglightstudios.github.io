@@ -646,5 +646,5 @@ collections:
             name: job_post_why_join
             widget: markdown
           - label: Job Post How To Apply
-            name: job_post_how_to_apply
+            name: job_post_how_to_apply_intro
             widget: markdown
