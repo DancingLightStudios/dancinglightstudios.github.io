@@ -1,11 +1,11 @@
 items:
   - text: Physical Literacy
-    url: "/physical-literacy"
+    url: /physical-literacy
   - text: Location Based Entertainment
-    url: "/location-based-entertainment"
+    url: /location-based-entertainment
   - text: About
-    url: "/about"
+    url: /about
+  - text: Careers
+    url: /careers
   - text: Contact
     url: "#contact"
-  # - text: News
-  #   url: "/news"
