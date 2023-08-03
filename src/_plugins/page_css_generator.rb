@@ -1,35 +1,6 @@
 require "digest"
 
 module Jekyll
-  # Override class for jekyll's static files
-  # this allows the creation of files without a source file
-  class GeneratedStaticFile < Jekyll::StaticFile
-    attr_accessor :file_contents
-
-    def initialize(site, dir, name)
-      @site = site
-      @dir  = dir
-      @name = name
-      @relative_path = File.join(*[@dir, @name].compact)
-      @extname = File.extname(@name)
-      @type = @collection&.label&.to_sym
-    end
-
-    def write(dest)
-      dest_path = destination(dest)
-      return false if File.exist?(dest_path)
-
-      FileUtils.mkdir_p(File.dirname(dest_path))
-      FileUtils.rm(dest_path) if File.exist?(dest_path)
-
-      File.open(dest_path, 'w') do |output_file|
-        output_file << file_contents
-      end
-
-      true
-    end
-  end
-
   # Concatenates, hashes a page's css
   # ---
   # css:
@@ -49,24 +20,43 @@ module Jekyll
 
       @source_path = File.join(*[site.source, @asset_path].compact)
 
+      docs = []
+
       # Pages with the frontmatter css
-      pages = site.pages.select { |page| page.data.include? 'css' }
+      docs += site.pages.select { |page| page.data.include? 'css' }
 
       # collections with the frontmatter css
+      # NOTE documents/collections/pages need to come before layouts
+      #      not sure why, but after the layouts are processed
+      #      static files can't be writen to anymore.
+      #      `site.static_files << file`
+      #      fails silently.
       for type, collection in site.collections do
-        for doc in collection.docs do
-          pages << doc if doc.data.include? 'css'
-        end
+        docs += collection.docs.collect { |doc| doc if doc.data.include? 'css' }.compact
       end
 
-      for page in pages do
-        files = page.data['css']
+      # layouts
+      docs += site.layouts.collect { |_, layout| layout if layout.data.include? 'css' }.compact!
+
+      for doc in docs do
+        files = doc.data['css']
         next if files.nil?
 
         css_output = ''
 
         for file in files do
-          css_output << File.read(@source_path + file)
+          file_contents = File.read(@source_path + file)
+
+          # layouts and pages/docs havae different filenaame and extension methods
+          if doc.respond_to?(:name)
+            name = File.basename(doc.name, doc.ext)
+          elsif doc.respond_to?(:basename)
+            name = File.basename(doc.basename, doc.extname)
+          end
+
+          tmp_page = Jekyll::PageWithoutAFile.new(site, nil, @asset_path, name + '.css')
+          tmp_page.content = file_contents
+          css_output << Jekyll::Renderer.new(site, tmp_page).run()
         end
 
         # css minification
@@ -79,7 +69,7 @@ module Jekyll
         hashed_file_name = Digest::MD5.hexdigest(css_output) + '.css'
 
         file = Jekyll::GeneratedStaticFile.new(site, @asset_path, hashed_file_name)
-        page.data['css'] = file.url
+        doc.data['css'] = file.url
 
         # skip file for output if already in the list
         return if site.static_files.find { |x| x.name == file.name }
@@ -87,23 +77,9 @@ module Jekyll
         file.file_contents = css_output
 
         # append file to site for processing
-        site.static_files << file
+        site.static_files += [file]
       end
     end
-  end
-end
-
-# Compress css files with frontmatter headers
-Jekyll::Hooks.register :pages, :post_render do |page|
-  # only operate on css files
-  if page.ext == '.css' then
-    config = page.site.config
-    @asset_style = config['page_css']['style'] || false
-
-    # css minification
-    converter_config = { 'sass' => { 'style' => @asset_style } }
-    css_converter = Jekyll::Converters::Scss.new(converter_config)
-    page.output = css_converter.convert(page.output)
   end
 end
 
