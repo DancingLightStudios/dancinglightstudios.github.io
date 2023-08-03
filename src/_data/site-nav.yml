@@ -5,7 +5,7 @@ items:
     url: /location-based-entertainment
   - text: About
     url: /about
-  - text: Contact
-    url: "#contact"
   - text: Careers
     url: /careers
+  - text: Contact
+    url: "#contact"
