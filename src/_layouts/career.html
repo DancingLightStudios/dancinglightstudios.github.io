@@ -54,15 +54,9 @@ layout: default
 
 	<section class="cta">
 		<h2>How To Apply</h2>
-		{{ global.job_post_how_to_apply | markdownify }}
+		{{ global.job_post_how_to_apply_intro | markdownify }}
 
-		<div>
-			<a href="#" class="button button--apply">Apply Now</a>
-			<a href="#" class="button button--linkedin">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc.--><path d="M100 448H7V149h93zM54 108C24 108 0 84 0 54a54 54 0 0 1 108 0c0 29-25 54-54 54zm394 340h-93V302c0-34 0-79-48-79s-56 38-56 77v148h-93V149h90v41h1c12-24 43-49 88-49 94 0 111 62 111 143v164z"/></svg>
-				<span>LinkedIn</span>
-			</a>
-		</div>
+		{% include components/how-to-apply.html %}
 	</section>
 </article>
 {% endcapture %}

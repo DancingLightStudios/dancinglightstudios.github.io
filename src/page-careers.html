@@ -18,6 +18,7 @@ css:
 {% capture body %}
 <article class="content">
 	<div>
+	<h2>Joining Dancing Light Studios</h2>
 	{{ page.body | markdownify }}
 	</div>
 
@@ -46,15 +47,9 @@ css:
 
 		<section class="cta">
 			<h2>How To Apply</h2>
-			{{ page.job_post_how_to_apply | markdownify }}
+			{{ page.job_post_how_to_apply_intro | markdownify }}
 
-			<div>
-				<a href="#" class="button button--apply">Apply Now</a>
-				<a href="https://www.linkedin.com/company/dancinglightstudios/jobs/" target="_blank" class="button button--linkedin">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100 448H7V149h93zM54 108C24 108 0 84 0 54a54 54 0 0 1 108 0c0 29-25 54-54 54zm394 340h-93V302c0-34 0-79-48-79s-56 38-56 77v148h-93V149h90v41h1c12-24 43-49 88-49 94 0 111 62 111 143v164z"/></svg>
-					<span>LinkedIn</span>
-				</a>
-			</div>
+			{% include components/how-to-apply.html %}
 		</section>
 	</aside>
 </article>
