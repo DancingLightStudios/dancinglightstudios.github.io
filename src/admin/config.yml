@@ -75,8 +75,8 @@ collections:
         name: requirements
         widget: markdown
         required: false
-  # News Posts -----------------------------------------------------------------
-  - label: "News"
+  # Campfire Posts -----------------------------------------------------------------
+  - label: "Campfire"
     name: "post"
     folder: "src/_posts"
     create: true
@@ -92,7 +92,7 @@ collections:
       - label: Author
         name: author
         widget: relation
-        collection: staff
+        collection: staff-members
         search_fields: [name, email]
         value_field: name
       - label: Published
@@ -109,15 +109,6 @@ collections:
         fields:
           - label: Category
             name: category
-            widget: string
-            required: false
-      - label: Tags
-        name: tags
-        widget: list
-        collapsed: false
-        fields:
-          - label: Tag
-            name: tag
             widget: string
             required: false
       - label: Hero Image

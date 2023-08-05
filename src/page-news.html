@@ -1,0 +1,82 @@
+---
+title: Campfire
+layout: default
+permalink: /campfire
+class: campfire
+pagination:
+  enabled: true
+  per_page: 2
+css:
+  - page-campfire.css
+---
+
+{% capture hero-header %}
+<header class="header">
+	<h1 class="header__heading">{{ page.title }}</h1>
+	<p class="header__subheading">{{ page.subheader }}</p>
+</header>
+{% endcapture %}
+
+{% include components/separator.html content=hero-header start=false end=true class='hero' %}
+
+{% capture content %}
+  {% for post in paginator.posts %}
+  <article class="post-card">
+    <div class="post-card__main">
+      <header class="post-card__header">
+        <a class="post-card__title-link" href="{{ post.url }}">
+          <h2 class="post-card__title">{{ post.title }}</h2>
+        </a>
+
+        <ul class="post-card__details post-details">
+          <li class="post-details__item post-details__item--date">{{ post.date | date: "%Y-%m-%d" }}</li>
+          <li class="post-details__item post-details__item--author">by {{ post.author }}</li>
+        </ul>
+      </header>
+
+      {{ post.excerpt }}
+
+      <footer class="post-card__footer">
+        <a href="{{ post.url }}" class="post-card__link">Continue reading {{ post.title }}</a>
+      </footer>
+    </div>
+
+    {% if post.hero-image.src %}
+    <aside class="post-card__image-container">
+      <img class="image image--card post-card__image" src="{{ post.hero-image.src }}" alt="{{ post.hero-image.alt }} title="{{ post.hero-image.title }}">
+    </aside>
+    {% endif %}
+  </article>
+  {% endfor %}
+
+  {% if paginator.total_pages > 1 %}
+  <footer class="pagination">
+    <nav class="pagiation__nav">
+      {% if paginator.previous_page %}
+        <a class="pagination__button" href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+      {% else %}
+        <span class="pagination__button pagination__button--disabled">&laquo; Prev</span>
+      {% endif %}
+
+      {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+          <em class="pagination__button pagination__button--disabled pagination__button--current">{{ page }}</em>
+        {% elsif page == 1 %}
+          <a class="pagination__button" href="{{ '/' | relative_url }}">{{ page }}</a>
+        {% else %}
+          <a class="pagination__button" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if paginator.next_page %}
+        <a class="paignation__button" href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+      {% else %}
+        <span class="pagination__button pagination__button--disabled">Next &raquo;</span>
+      {% endif %}
+    </nav>
+  </footer>
+  {% endif %}
+{% endcapture %}
+
+{% include components/separator.html content=content start=true end=true class="campfire" %}
+

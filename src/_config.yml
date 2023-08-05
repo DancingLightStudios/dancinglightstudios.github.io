@@ -128,3 +128,11 @@ defaults:
       class: career
       css:
         - page-career.css
+  - scope:
+      path: '_posts/**/*.md'
+    values:
+      layout: spark
+      css:
+        - page-campfire.css
+      class: spark
+      permalink: /campfire/:year/:slug/index.html
