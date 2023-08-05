@@ -1,7 +1,6 @@
 {% assign page_keywords = page.keywords | split: ', ' | compact %}
 {% assign site_keywords = site.keywords | split: ', ' | compact %}
 {% assign keywords = page_keywords | concat: site_keywords | join: ', '%}
-<meta http-equiv="Content-Type" content="text/html; charset={{ site.charset }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="page-datetime" content="{% if page.date-modified %}{{page.date-modified}}{% else if page.date-created %}{{page.date-created}}{% else %}{{site.time | date: "%Y-%m-%d"}}{% endif %}">
 <meta name="author" content="{{ '/humans.txt' | prepend: site.baseurl }}">
