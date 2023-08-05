@@ -3,9 +3,7 @@ items:
     url: /physical-literacy
   - text: Location Based Entertainment
     url: /location-based-entertainment
+  - text: Campfire
+    url: /campfire
   - text: About
     url: /about
-  - text: Careers
-    url: /careers
-  - text: Contact
-    url: "#contact"

@@ -155,6 +155,28 @@ collections:
                 name: class
                 widget: string
                 required: false
+
+      # Footer Navigation --------------------------------------------------------
+      - label: Footer Nav
+        name: footer-nav
+        file: src/_data/footer-nav.yml
+        fields:
+          - label: footer-nav-items
+            name: items
+            widget: list
+            allow_add: true
+            fields:
+              - label: Text
+                name: text
+                widget: string
+              - label: URL
+                name: url
+                widget: string
+              - label: Class
+                name: class
+                widget: string
+                required: false
+
       # Home Page Navigation ---------------------------------------------------
       - label: Site Nav for Home Page
         name: site-nav-home
@@ -176,10 +198,11 @@ collections:
                 name: class
                 widget: string
                 required: false
-      # Footer Navigation ------------------------------------------------------
-      - label: Footer Navgation
-        name: footer-nav
-        file: src/_data/footer-nav.yml
+
+      # Social Navigation ------------------------------------------------------
+      - label: Social Navgation
+        name: social-nav
+        file: src/_data/social-nav.yml
         fields:
           - label: Items
             name: items
