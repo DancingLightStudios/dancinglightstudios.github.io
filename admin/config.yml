@@ -75,24 +75,20 @@ collections:
         name: requirements
         widget: markdown
         required: false
-  # News Posts -----------------------------------------------------------------
-  - label: "News"
+  # Campfire Posts -----------------------------------------------------------------
+  - label: "Campfire"
     name: "post"
     folder: "src/_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - label: Layout
-        name: layout
-        widget: hidden
-        default: post
       - label: Title
         name: title
         widget: string
       - label: Author
         name: author
         widget: relation
-        collection: staff
+        collection: staff-members
         search_fields: [name, email]
         value_field: name
       - label: Published
@@ -111,15 +107,6 @@ collections:
             name: category
             widget: string
             required: false
-      - label: Tags
-        name: tags
-        widget: list
-        collapsed: false
-        fields:
-          - label: Tag
-            name: tag
-            widget: string
-            required: false
       - label: Hero Image
         name: hero-image
         widget: object
@@ -133,9 +120,9 @@ collections:
             name: alt
             widget: string
             required: false
-      - label: Permalink
-        name: permalink
-        widget: string
+      - label: Excerpt
+        name: excerpt
+        widget: markdown
         required: false
       - label: Body
         name: body
@@ -168,6 +155,28 @@ collections:
                 name: class
                 widget: string
                 required: false
+
+      # Footer Navigation --------------------------------------------------------
+      - label: Footer Nav
+        name: footer-nav
+        file: src/_data/footer-nav.yml
+        fields:
+          - label: footer-nav-items
+            name: items
+            widget: list
+            allow_add: true
+            fields:
+              - label: Text
+                name: text
+                widget: string
+              - label: URL
+                name: url
+                widget: string
+              - label: Class
+                name: class
+                widget: string
+                required: false
+
       # Home Page Navigation ---------------------------------------------------
       - label: Site Nav for Home Page
         name: site-nav-home
@@ -189,10 +198,11 @@ collections:
                 name: class
                 widget: string
                 required: false
-      # Footer Navigation ------------------------------------------------------
-      - label: Footer Navgation
-        name: footer-nav
-        file: src/_data/footer-nav.yml
+
+      # Social Navigation ------------------------------------------------------
+      - label: Social Navgation
+        name: social-nav
+        file: src/_data/social-nav.yml
         fields:
           - label: Items
             name: items
