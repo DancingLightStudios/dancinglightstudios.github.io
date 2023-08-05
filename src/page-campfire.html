@@ -5,7 +5,9 @@ permalink: /campfire
 class: campfire
 pagination:
   enabled: true
-  per_page: 2
+  per_page: 5
+  sort_field: 'date'
+  sort_reverse: true
 css:
   - page-campfire.css
 ---
@@ -34,7 +36,7 @@ css:
         </ul>
       </header>
 
-      {{ post.excerpt }}
+      {{ post.excerpt | markdownify }}
 
       <footer class="post-card__footer">
         <a href="{{ post.url }}" class="post-card__link">Continue reading {{ post.title }}</a>

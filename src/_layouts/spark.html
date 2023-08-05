@@ -8,20 +8,14 @@ class: spark
 <header class="header">
 	<a href="/campfire">&larr; Campfire</a>
 
-	<div>
-		<h1 class="header__heading">{{ page.title }}</h1>
+	<h1 class="header__heading">{{ page.title }}</h1>
 
-		<ul class="post-card__details post-details">
-			<li class="post-details__item post-details__item--date">{{ page.date | date: "%Y-%m-%d" }}</li>
-			<li class="post-details__item post-details__item--author">by {{ page.author }}</li>
-		</ul>
+	<ul class="post-card__details post-details">
+		<li class="post-details__item post-details__item--date">{{ page.date | date: "%Y-%m-%d" }}</li>
+		<li class="post-details__item post-details__item--author">by {{ page.author }}</li>
+	</ul>
 
-		<p class="header__subheading"sks{{ page.excerpt }}</p>
-	</div>
-
-	{% if page.hero-image.src %}
-	<img class="image image--card post-card__image" src="{{ page.hero-image.src }}" alt="{{ page.hero-image.alt }} title="{{ page.hero-image.title }}">
-	{% endif %}
+	<div class="header__subheading">{{ page.excerpt | markdownify }}</div>
 </header>
 {% endcapture %}
 
@@ -29,6 +23,10 @@ class: spark
 
 {% capture content %}
 <article class="post">
+	{% if page.hero-image.src %}
+	<img class="image image--card post-card__image" src="{{ page.hero-image.src }}" alt="{{ page.hero-image.alt }} title="{{ page.hero-image.title }}">
+	{% endif %}
+
 	{{ page | markdownify }}
 </article>
 {% endcapture %}
