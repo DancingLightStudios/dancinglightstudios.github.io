@@ -31,12 +31,12 @@ module Jekyll
       #      static files can't be writen to anymore.
       #      `site.static_files << file`
       #      fails silently.
-      for type, collection in site.collections do
+      for _type, collection in site.collections do
         docs += collection.docs.collect { |doc| doc if doc.data.include? 'css' }.compact
       end
 
       # layouts
-      docs += site.layouts.collect { |_, layout| layout if layout.data.include? 'css' }.compact!
+      docs += site.layouts.collect { |_, layout| layout if layout.data.include? 'css' }.compact
 
       for doc in docs do
         files = doc.data['css']
@@ -45,8 +45,6 @@ module Jekyll
         css_output = ''
 
         for file in files do
-          file_contents = File.read(@source_path + file)
-
           # layouts and pages/docs havae different filenaame and extension methods
           if doc.respond_to?(:name)
             name = File.basename(doc.name, doc.ext)
@@ -55,6 +53,7 @@ module Jekyll
           end
 
           tmp_page = Jekyll::PageWithoutAFile.new(site, nil, @asset_path, name + '.css')
+          file_contents = File.read(@source_path + file)
           tmp_page.content = file_contents
           css_output << Jekyll::Renderer.new(site, tmp_page).run()
         end
@@ -72,12 +71,12 @@ module Jekyll
         doc.data['css'] = file.url
 
         # skip file for output if already in the list
-        return if site.static_files.find { |x| x.name == file.name }
+        next if site.static_files.find { |x| x.name == file.name }
 
         file.file_contents = css_output
 
         # append file to site for processing
-        site.static_files += [file]
+        site.static_files << file
       end
     end
   end
