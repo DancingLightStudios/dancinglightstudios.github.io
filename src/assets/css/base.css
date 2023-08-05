@@ -557,32 +557,6 @@
     line-height: 1.5;
   }
 
-  dl.list--title-inline::after {
-    content: "";
-    visibility: hidden;
-    display: block;
-    height: 0;
-    clear: both;
-  }
-
-  .list--title-inline dt,
-  .list--title-inline dd {
-    float: left;
-  }
-  .list--title-inline dt {
-    clear: both;
-    padding-right: var(--_list-inline-spacing, 0.5rem)
-  }
-
-  dl.list--inline {
-    display: inline-flex;
-    gap: var(--_list-inline-spacing, 1rem)
-  }
-
-  dl.list--inline dd {
-    margin-inline-start: var(--_list-inline-spacing-item-adjust, -0.5rem)
-  }
-
   /*
    * Quotes
    * ------
@@ -596,12 +570,14 @@
     flex-direction: column;
     gap: var(--_quote-spacing, 1rem);
     margin: 0;
+    margin-bottom: 1rem;
   }
 
   blockquote p {
     font-size: var(--_quote-font-size, var(--fs-big, 1.5rem));
     line-height: var(--_quote-line-height, 1.25);
     font-weight: var(--_quote-font-weight, 300);
+    margin-block: 0;
   }
 
   blockquote cite {
@@ -829,10 +805,11 @@
    */
   .button {
     background-color: var(--_button, #000f);
-    box-shadow:
+    box-shadow: var(--_button-shadows,
       0 0.1rem 0.25rem var(--_button-shadow, #0003),
       inset 0 0.1rem 0.25rem var(--_button--light, #666f),
-      inset 0 -0.1rem 0.25rem var(--_button--dark, #333f);
+      inset 0 -0.1rem 0.25rem var(--_button--dark, #333f)
+    );
     color: var(--_color, white);
     padding: var(--_button-padding-block, 0.75rem) var(--_button-padding-inline, 1.5rem);
     border-radius: var(--_button-radius, 5rem);
@@ -867,6 +844,17 @@
     --_button-padding-block: 0.5rem;
     --_button-padding-inline: 1.5rem;
     --_button-font-size: var(--fs-big);
+  }
+
+  .button--link {
+    --_button: transparent;
+    --_button--light: transparent;
+    --_button--dark: transparent;
+    --_button-shadows: none;
+    --_color: blue;
+    --_button-text-decoration: underline;
+    --_border-radius: 0;
+    --_button-padding-inline: 0;
   }
 
   .button--mini {
