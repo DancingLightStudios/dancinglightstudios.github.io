@@ -1,6 +1,6 @@
 ---
 title: Adaptive Ambition
-author: Emily Mckee
+author: Liam Knightley
 published: true
 date: 2023-08-17T21:24:14.102-07:00
 hero-image:
