@@ -1,39 +1,48 @@
 ---
 published: false
-date: 2023-07-26T05:50:52.076Z
+date: 2023-08-19T05:50:52.076Z
 title: Senior Unity Developer
 level: Senior (5+ years)
-salary: $150,000+ CAD
-location: Remote, Hybrid, In-Office (Wherever you want)
-opportunity: We are actively seeking a dynamic and talented Senior Software
-  Developer ready to invest their expertise in our pioneering mission and align
-  with our core values. This role is an exceptional opportunity for a
-  professional with extensive experience in Unity or Unreal and a proven track
-  record of successful projects. If you are driven by the excitement of a
-  challenge, eager to make a significant impact and flourish in an environment
-  that encourages you to show up as yourself, we want to meet you.
+salary: CA$100,000 - CA$150,000
+location: Hybrid
+opportunity: At Dancing Light Studios, the opportunity for a Senior Unity
+  Developer goes beyond just a job; it's an exciting chance to pioneer and shape
+  the future of entertainment technology. You'll thrive in our unique cell-based
+  team structure where collaboration with other passionate and driven
+  individuals is key, shared objectives drive collective innovation, and
+  individual contributions are celebrated. The experiences and products you'll
+  help develop will have a significant and meaningful impact on countless lives.
+  Working on high-tech location-based entertainment projects, you'll dive into a
+  world of Augmented Reality (AR), Virtual Reality (VR), projection mapping,
+  immersive displays, and mesmerizing soundscapes. Our aim is to make every
+  workday an adventure, and you'll play a pivotal role in that journey.
 responsibilities: >-
-  * Design and implement well-engineered, reliable, maintainable, and bug-free
-  code.
+  * Design and implement well-engineered, reliable, and maintainable code.
 
   * Collaborate with team members to develop various gameplay systems.
 
-  * Develop and test code, fix bugs, and profile and optimize code.
+  * Creative innovative new solutions in the world of location-based entertainment.
 
-  * Document and peer review technical designs with other software engineers.
+  * The ability to both prototype new ideas quickly and polish validated ideas to perfection.
+
+  * Test code, fix bugs, and profile and optimize code.
+
+  * Document and peer review technical designs with other software developers.
 
   * Work with QA, providing the tools and resources needed to ensure our products hit the highest standards of quality.
+
+  * Monitor, mentor, and direct developers under your technical supervision to maximize their potential, their efficiency, and their adherence to the studio's code quality and standards.
 requirements: >-
   * Minimum 5 years of industry experience as a Software Developer or similar
   role.
 
   * Proven experience with Unity or Unreal.
 
-  * Ideally, you have been a part of at least one shipped title.
+  * At least one shipped title.
 
-  * Extensive knowledge of C++ and/or C#.
+  * Extensive knowledge of C# and/or C++.
 
-  * Experience with gameplay programming and AI.
+  * Experience with gameplay programming and tool development.
 
   * Strong understanding of 3D math and computer graphics.
 
