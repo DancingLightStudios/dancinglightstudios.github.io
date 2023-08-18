@@ -48,7 +48,7 @@ collections:
         required: false
       - label: Date
         name: date
-        widget: date
+        widget: datetime
       - label: Title
         name: title
         widget: string
