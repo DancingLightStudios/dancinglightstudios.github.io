@@ -56,10 +56,10 @@ url: "https://dancinglightstudios.ca" # primary url the website will reside at
 creator: "gregdaynes.com" # Name or twitter handle of the website creator
 lang: "en-CA" # base language for website
 permalink: pretty
-title: "Project Hyde" # Title for site - used in jekyll-feed
-description: "" # Longform description of site
-keywords: "" # comma separated words to describe site
-ownership: "https://mastodon.social/@gregdaynes" # url for rel=me
+title: "Dancing Light Studios" # Title for site - used in jekyll-feed
+description: "Dancing Light Studios is poised to revolutionize the realms of education and entertainment through awe-inspiring AR, VR, and MR experiences. Our technology is driven by a passion to empower, engage, and enlighten. The canvas of possibilities is endless, and we’re painting it with pixels of progress. A new era beckons, and Dancing Light Studios is leading the way. Be part of the transformation – because everything is about to change." # Longform description of site
+keywords: "Dancing Light Studios, Location Based Entertainment, Phsyical Literacy, Augmented Reality, AR, XR, MR, VR, Immersive Learning" # comma separated words to describe site
+ownership: "" # url for rel=me
 
 feed:
   path: /feed.xml
