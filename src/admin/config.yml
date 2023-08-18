@@ -39,7 +39,6 @@ collections:
   - label: Careers
     name: careers
     folder: src/_careers
-    slug: "{{ title }}"
     create: true
     fields:
       - label: Published
@@ -48,7 +47,7 @@ collections:
         required: false
       - label: Date
         name: date
-        widget: date
+        widget: datetime
       - label: Title
         name: title
         widget: string

@@ -1,6 +1,6 @@
 ---
 published: true
-date: 2023-08-19T05:50:52.076Z
+date: 2023-08-18T20:34:17.614Z
 title: Senior Unity Developer
 level: Senior (5+ years)
 salary: CA$100,000 - CA$150,000
