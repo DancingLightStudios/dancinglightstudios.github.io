@@ -1,7 +1,7 @@
 # baseurl: http://localhost:3000
 unpublished: true
 
-page_css:
+css:
   style: compressed
 page_js:
   minify: true
