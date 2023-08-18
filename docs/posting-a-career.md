@@ -104,3 +104,11 @@ Visit [the careers page](https://dancinglightstudios.ca/careers)
 click on the posting to take a look
 
 ![](./images/docs-website-career-posting.png)
+
+## 7. Wait, what's this extra information?
+
+The About Us, Why Join DLS, and How to apply sections of the career page, are edited elsewhere, to maintain consistency between postings and pages on the site. 
+
+This content can be edited in the admin area, under [Pages > Careers](https://dancinglightstudios.ca/admin/#/collections/pages/entries/page-careers). 
+
+_Note that changes to Pages > Careers, will impact all Career postings, and the Careers page itself. It's best to read the [documentation on editing the careers page](./edit-page-careers.md)
