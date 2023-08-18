@@ -18,12 +18,15 @@ charset:     utf-8 # Website character set
 baseurl:     ""     # root
 
 # Concatenation configuration
-page_css:
+css:
   path: assets/css/
   # style: compressed
 page_js:
   path: assets/js/
   # minify: true
+fonts:
+  variable: true
+  path: assets/fonts/
 
 kramdown:
   parse_block_html: true
@@ -52,7 +55,6 @@ collections:
 url: "https://dancinglightstudios.ca" # primary url the website will reside at
 creator: "gregdaynes.com" # Name or twitter handle of the website creator
 lang: "en-CA" # base language for website
-fonts: true
 permalink: pretty
 title: "Project Hyde" # Title for site - used in jekyll-feed
 description: "" # Longform description of site
@@ -81,8 +83,8 @@ defaults:
   - scope:
       path: '_posts/**/*.md'
     values:
-      layout: spark
+      layout: 'spark'
+      class: spark
       css:
         - page-campfire.css
-      class: spark
       permalink: /campfire/:year/:slug/index.html
