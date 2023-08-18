@@ -42,7 +42,7 @@ module Jekyll
 
         hashed_file_name = Digest::MD5.hexdigest(js_output) + '.js'
 
-        file = Jekyll::GeneratedStaticFile.new(site, @asset_path, hashed_file_name)
+        file = ProjectHyde::GeneratedStaticFile.new(site, @asset_path, hashed_file_name)
 
         # skip file for output if already in the list
         # return if site.static_files.find { |x| x.name == file.name }

@@ -18,12 +18,15 @@ charset:     utf-8 # Website character set
 baseurl:     ""     # root
 
 # Concatenation configuration
-page_css:
+css:
   path: assets/css/
   # style: compressed
 page_js:
   path: assets/js/
   # minify: true
+fonts:
+  variable: true
+  path: assets/fonts/
 
 kramdown:
   parse_block_html: true
@@ -52,66 +55,15 @@ collections:
 url: "https://dancinglightstudios.ca" # primary url the website will reside at
 creator: "gregdaynes.com" # Name or twitter handle of the website creator
 lang: "en-CA" # base language for website
-fonts: true
 permalink: pretty
 title: "Project Hyde" # Title for site - used in jekyll-feed
 description: "" # Longform description of site
 keywords: "" # comma separated words to describe site
 ownership: "https://mastodon.social/@gregdaynes" # url for rel=me
 
-# !- Social
-# social:
-#   name: Example Site
-#   links:
-#     - https://twitter.com/example
-#     - https://facebook.com/example
-#     - https://linkedin.com/in/example
-#     - https://plus.google.com/+example
-#     - https://github.com/example
-# twitter:
-#   username: "@example" # Twitter handle for website
-# facebook:
-#   app_id: "" # Facebook app ID for Facebook Insights
-#   publisher: "" # Facebook page url or ID for publishing entity
-#   admins: "" # Facebook user id for domain insights linked to a personal account
-
-# !- analytics
-# Does not load in development
-# analytics: "UA-XXXXXX-XX" # Google analytics tracking number. eg "UA-XXXXXX-XX"
-# webmaster_verifications:
-#   google: 1234
-#   bing: 1234
-#   alexa: 1234
-#   yandex: 1234
-#   baidu: 1234
-
-# RSS - https://github.com/jekyll/jekyll-feed
 feed:
   path: /feed.xml
 
-# !- Mobile
-# mobile-optimized: true # is the website mobile optimized. true | false
-
-# !- Web App Options
-# web-app-enabled: false # options: true | false
-# web-app-capable: "" # yes | no
-# web-app-title:   "" # tip: keep it short
-# web-app-style:   "" # options: default, black, black-translucent
-# web-app-color:   "" # used for Windows 8 / RT
-
-# !- dns-prefetch
-# Identifies a DNS query to resolve the background, so that requests can occur more quickly.
-#dns-prefetch:
-#  - twitter.com
-#  - facebook.com
-#  - mailchimp.com
-
-# !- resource-prefetch:
-# Identifies a resource file, such as an image or a CSS stylesheet, to be downloaded into the cache.
-#prefetch:
-#  - "http://example.com/css/style.css"
-
-# !- Sitemap configuration
 defaults:
   - scope:
       path: 'styleguide/**/*.html'
@@ -131,8 +83,8 @@ defaults:
   - scope:
       path: '_posts/**/*.md'
     values:
-      layout: spark
+      layout: 'spark'
+      class: spark
       css:
         - page-campfire.css
-      class: spark
       permalink: /campfire/:year/:slug/index.html

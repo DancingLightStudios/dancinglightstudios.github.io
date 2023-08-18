@@ -36,7 +36,13 @@ fonts:
           italic: true
         - value: 400
           italic: true
+        - value: 400
+          italic: false
+        - value: 500
+          italic: false
         - value: 600
+          italic: false
+        - value: 700
           italic: false
         - value: 800
           italic: false

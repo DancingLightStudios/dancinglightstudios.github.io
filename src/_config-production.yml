@@ -1,6 +1,6 @@
 baseurl: https://dancinglightstudios.ca
 
-page_css:
+css:
   style: compressed
 
 page_js:
