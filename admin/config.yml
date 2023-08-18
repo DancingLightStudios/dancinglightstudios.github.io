@@ -39,7 +39,6 @@ collections:
   - label: Careers
     name: careers
     folder: src/_careers
-    slug: "{{ title }}"
     create: true
     fields:
       - label: Published
