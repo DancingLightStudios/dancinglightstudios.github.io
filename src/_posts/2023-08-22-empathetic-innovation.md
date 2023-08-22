@@ -1,6 +1,7 @@
 ---
 title: Empathetic Innovation
 author: Gregory Daynes
+published: true
 date: 2023-08-23T17:26:12.200Z
 hero-image:
   src: /images/uploads/empathetic_innovation.webp
