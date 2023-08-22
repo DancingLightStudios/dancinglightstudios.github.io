@@ -34,19 +34,3 @@ css:
 
 {% include components/separator.html content=body start=true end=true class='body' %}
 
-{% capture leadership %}
-<div class="content--leadership">
-	{% for staff_member in page.leadership %}
-		{% for site_staff_member in site.staff_members %}
-			{% if staff_member.staff== site_staff_member.name %}
-			<div class="leader">
-				<h2>{{ site_staff_member.name }}</h2>
-				<p>{{ site_staff_member.title }}, {{ site_staff_member.content }}</p>
-			</div>
-			{% endif %}
-		{% endfor %}
-	{% endfor %}
-</div>
-{% endcapture %}
-
-{% include components/separator.html content=leadership start=true end=true class='leadership' %}
