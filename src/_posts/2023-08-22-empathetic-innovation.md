@@ -14,7 +14,7 @@ The answer lies within the understanding and embrace of empathy.
 
 Leading with empathy, embodying empathy and fostering empathy as the core of our work strengthens our sense of community, collaboration and trust. It is from a strong community that ideas flourish, cross-pollenated with diverse learnings, iterated faster and made brighter. These ideas beget innovation.
 
-Through our experiences in life, biases are everywhere. They tend to be invisible and thoughtless to the beholder, but are top of mind to our co-workers. Embracing empathy in our interactions bring these biases front and centre for all to see. This is where the real innovation happens, with empathy in mind we work together to solve problems from many side.
+Through our experiences in life, biases are everywhere. They tend to be invisible and thoughtless to the beholder, but are top of mind to our co-workers and customers. Embracing empathy in our interactions bring these biases front and centre for all to see. This is where the real innovation happens, with empathy in mind we work together to solve problems from many side.
 
 A healthy community full of empathy forms the foundation of collaboration, trust and safety. Members are able to express themselves and explore what impacts them. They embolden each other as cheerleaders not competitors. Our collaboration becomes richer, our communication deeper, and we develop a sense of belonging. When the community thrives, so does the innovations the emerge from it.
 
