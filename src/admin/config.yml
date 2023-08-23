@@ -96,7 +96,7 @@ collections:
         required: false
       - label: Date
         name: date
-        widget: date
+        widget: datetime
       - label: Categories
         name: categories
         widget: list
