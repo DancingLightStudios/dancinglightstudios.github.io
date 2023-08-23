@@ -2,7 +2,7 @@
 title: Empathetic Innovation
 author: Gregory Daynes
 published: true
-date: 2023-08-23T17:26:12.200Z
+date: 2023-08-23T16:12:08.660Z
 hero-image:
   src: /images/uploads/empathetic_innovation.webp
 excerpt: Leading with empathy, embodying empathy and fostering empathy as the
