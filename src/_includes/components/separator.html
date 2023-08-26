@@ -1,11 +1,5 @@
-<div class="{% if include.class %}{{ include.class }} {% endif %}container--horizontal">
-	{% if include.start %}
-	<div class="separator--block-start">
-		{% include components/corner-left-top.svg %}
-	</div>
-	{% endif %}
-
-	<div class="{% if include.start or include.end %}separator--wrapper{% endif %} container--wrapper">
+<div class="polygon{% if include.class %} {{ include.class }}{% endif %}">
+	<div class="{% if include.start %} polygon-start{% endif %}{% if include.end %} polygon-end{% endif %}">
 		<div class="container--vertical">
 			{{ include.content }}
 		</div>
@@ -13,11 +7,5 @@
 
 	{% if include.content-aside %}
 	{{ include.content-aside }}
-	{% endif %}
-
-	{% if include.end %}
-	<div class="separator--block-end">
-		{% include components/corner-left-bottom.svg %}
-	</div>
 	{% endif %}
 </div>

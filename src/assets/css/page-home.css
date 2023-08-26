@@ -10,6 +10,12 @@
     overflow: hidden;
   }
 
+  .hero > .polygon-end {
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+
   .hero .container--vertical {
     display: flex;
     column-gap: 2rem;
@@ -300,8 +306,9 @@
   /*
    * physical literacy
    */
-  .pl.container--horizontal {
+  .pl.polygon {
     --_background-color: var(--c-primary--lightest);
+    --_background-color--dark: var(--c-primary--ligh);
   }
 
   .pl .container--wrapper {
@@ -348,8 +355,9 @@
   /*
    * Location Based Entertainment
    */
-  .lbe.container--horizontal {
+  .lbe.polygon {
     --_background-color: var(--c-secondary--light);
+    --_background-color--dark: var(--c-secondary);
   }
 
   .lbe .container--wrapper {
@@ -403,7 +411,7 @@
   /*
    * About
    */
-  .about.container--horizontal {
+  .about.polygon {
     --_background-color: white;
   }
 

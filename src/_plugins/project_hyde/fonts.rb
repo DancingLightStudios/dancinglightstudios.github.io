@@ -5,6 +5,7 @@ module Jekyll
   class FontsGenerator < Generator
     def generate(site)
       @config = site.config
+      return unless @config['fonts']
       return unless @config['fonts']['path']
       return if !site.data['fonts']
 

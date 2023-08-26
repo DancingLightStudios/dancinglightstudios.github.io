@@ -334,46 +334,40 @@
   /*
    * Container
    */
-  .container--horizontal {
-
-  }
-
   .container--vertical {
     max-width: var(--_max-x, 80rem);
     margin-inline: auto;
-    padding-inline: 1rem;
+    padding: 3rem 1rem;
   }
 
   /*
-   * Separator
+   * Polygon
    */
-  .container--horizontal {
-    /* positioning requirement for the separators to not float */
-    position: relative;
+
+  .polygon {
+    --_polygon-inset: 4rem;
+    --_polygon-x: 30%;
   }
 
-  [class*=separator] {
-    /* separator background */
-    color: var(--_background-color, silver);
-    width: 100%;
-  }
-
-  .separator--wrapper {
-    /* content container background */
+  .polygon-start,
+  .polygon-end {
     background-color: var(--_background-color, silver);
-    color: unset;
-    padding-block-start: 1rem;
-    padding-block-end: 1rem;
+    background: linear-gradient(to top right, var(--_background-color, silver), var(--_background-color--dark, var(--_background-color, silver)));
+    padding: var(--_polygon-inset) 0;
   }
 
-  .separator--block-start {
-    /* gross hack to get rid of lines */
-    margin-block-start: 0px;
-    margin-block-end: var(--_margin-block-end, -5px);
+  .polygon-start {
+    /* invert polygon-inset and add 1px of overlap to hide aliasing */
+    margin-top: calc(var(--_polygon-inset) * -1 - 1px);
+    clip-path: polygon(0% 0%, var(--_polygon-x) var(--_polygon-inset), 100% 0%, 100% 100%, 0% 100%);
   }
 
-  .separator--block-end {
-    height: 0;
+  .polygon-end {
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - var(--_polygon-inset)), var(--_polygon-x) 100%, 0% calc(100% - var(--_polygon-inset)));
+  }
+
+  .polygon-end.polygon-start {
+    clip-path: polygon(0% 0%, var(--_polygon-x) var(--_polygon-inset), 100% 0%, 100% calc(100% - var(--_polygon-inset)), var(--_polygon-x) 100%, 0% calc(100% - var(--_polygon-inset)));
   }
 
   /*

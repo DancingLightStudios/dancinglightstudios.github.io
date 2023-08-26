@@ -1,6 +1,7 @@
 @layer page {
   .hero {
     --_background-color: var(--c-tertiary--light);
+    --_background-color--dark: var(--c-tertiary);
   }
 
   .body {

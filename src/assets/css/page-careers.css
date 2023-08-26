@@ -8,7 +8,8 @@
   }
 
   .page-careers .hero {
-    --_background-color: var(--c-celery);
+    --_background-color: var(--c-celery--light);
+    --_background-color--dark: var(--c-celery--dark);
   }
 
   .page-careers .body {
