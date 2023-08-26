@@ -1,26 +1,18 @@
 @layer component {
   .colophon {
     --_background-color: var(--c-accent--lightest);
+    --_background-color--dark: var(--c-accent--light);
   }
 
   .colophon a {
     color: white;
   }
 
-  .colophon .container-vertical {
+  .colophon .container--vertical {
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-
-  .colophon .container--wrapper {
-    padding-block: 3rem 3rem;
-  }
-
-  @media screen and (min-width: 1365px) {
-    .colophon .container--wrapper {
-      padding-block: 3rem 0rem;
-    }
+    padding-block: 3rem;
   }
 
   .colophon .content {
